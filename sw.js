@@ -4,10 +4,10 @@ self.addEventListener('install', (e) => {
       '/index.html',
       '/index.js',
       '/style.css',
-      '/images/fox1.jpg',
-      '/images/fox2.jpg',
-      '/images/fox3.jpg',
-      '/images/fox4.jpg',
+      '/fox1.jpg',
+      '/fox2.jpg',
+      '/fox3.jpg',
+      '/fox4.jpg',
     ])),
   );
 });
