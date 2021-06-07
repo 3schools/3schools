@@ -1,5 +1,5 @@
 {
-  "background_color": "purple",
+  "background_color": "blue",
   "description": "Shows random fox pictures. Hey, at least it isn't cats.",
   "display": "fullscreen",
   "icons": [
@@ -11,5 +11,5 @@
   ],
   "name": "welcome to Demo Web",
   "short_name": "3schools",
-  "start_url": "https://www.3schools.in"
+  "start_url": "index.html"
 }
