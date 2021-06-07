@@ -9,7 +9,7 @@
       "type": "image/png"
     }
   ],
-  "name": "Awesome fox pictures",
-  "short_name": "Foxes",
-  "start_url": "/index.html"
+  "name": "welcome to Demo Web",
+  "short_name": "3schools",
+  "start_url": "https://www.3schools.in"
 }
