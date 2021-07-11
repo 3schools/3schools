@@ -44,7 +44,7 @@ margin:3px 1px;
 padding:3px 6px;
 background-color:#ff80d5;
 height:34px;
-max-width:35%;
+max-width:33%;
 border:1px solid #ffff00;
 border-radius:4px;
 box-shadow:1px 5px 10px #8c8c8c;
@@ -64,7 +64,7 @@ box-shadow:1px 5px 10px #000000 inset;
   }
 .btn{
    float:left;
-   margin-left:5px;
+   margin-left:2px;
 }
 .a{background-color:#ccffeb;}.b{background-color:#ffffcc; }.c{background-color:#ffcce6; }.d{background-color:#ccb3ff; }.e{background-color:#ffffb3; }
 
