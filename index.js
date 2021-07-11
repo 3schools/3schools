@@ -49,3 +49,21 @@ window.addEventListener('beforeinstallprompt', (e) => {
     });
   });
 }); 
+
+// share button 
+	const share = e => {
+  if (navigator.share) {
+    navigator
+      .share({
+        title: "Share my blog",
+        text: "3schools & Quiz Generator",
+        url: "https://app.3schools.in"
+      })
+      .then(() => console.log("thanks for share"))
+      .catch(error => console.log("error", error));
+  }
+};
+if(!navigator.share) {
+  document.getElementById('tip').className = 'show'
+}
+document.getElementById("share").addEventListener("click", share);
