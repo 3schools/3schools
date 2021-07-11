@@ -14,7 +14,7 @@
  <div id="appb"><button class="btn add-button appbtn">📱 install our app</button>
     <button class="btn appbtn" onclick="window.history.back();">🔙 Back</button>
  <button id="share" class="btn appbtn" >Share</button>
-<img id="ask3schools" style="height:35px;width:35px;margin:4px;" src="quiz1.jpg" alt="quiz generator"><hr>
+<img id="ask3schools" style="height:35px;width:35px;margin:4px;" src="quiz1.jpg" alt="quiz generator">
 <style type="text/css">
 	
 .container {
@@ -574,24 +574,5 @@ canvas.addEventListener('touchstart', onTouchStart);
 window.addEventListener('touchmove', onTouchMove);
 window.addEventListener('touchend', onTouchEnd);
 </script>
-<script>
-	const share = e => {
-  if (navigator.share) {
-    navigator
-      .share({
-        title: "Share my blog",
-        text: "Web development tutorial blogs",
-        url: "https://justforuse.github.io/blog/en-us/"
-      })
-      .then(() => console.log("thanks for share"))
-      .catch(error => console.log("error", error));
-  }
-};
-if(!navigator.share) {
-  document.getElementById('tip').className = 'show'
-}
-document.getElementById("share").addEventListener("click", share);
-</script >
 <script type='text/javascript'> if(typeof document.onselectstart!="undefined" ) {document.onselectstart=new Function ("return false" ); } else{document.onmousedown=new Function ("return false" ); document.onmouseup=new Function ("return false"); } </script>
-</div>"
-  
+</div>
