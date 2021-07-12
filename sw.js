@@ -3,6 +3,7 @@ self.addEventListener('install', (e) => {
     caches.open('quiz-generator').then((cache) => cache.addAll([
       'index.html',
       'v1.html',
+      'offline.html',
       'quiz-generator.png',
       '3schools.png',
       'index.js',
