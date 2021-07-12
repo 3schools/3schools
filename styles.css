@@ -73,10 +73,10 @@ animation: fadeInOut 3s linear infinite;
 }
 @keyframes fadeInOut{0%{opacity: 0;}50%{opacity: 2;}100%{opacity: 0;}}
  
- @media (min-width:500px){
+ @media (max-width:500px){
  .typeapu{
  display:none;
-  background-color:#ff0000;
+  background-color:#ff0;
  }
  
  }
