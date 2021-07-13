@@ -4,6 +4,7 @@ self.addEventListener('install', (e) => {
       'index.html',
       'v1.html',
       'offline.html',
+      'game.html',
       'quiz-generator.png',
       '3schools.png',
       'index.js',
