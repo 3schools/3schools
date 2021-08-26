@@ -19,7 +19,6 @@ body.loading .loading-modal {
 */
 .dropzone {
     border: 2px dashed #ccc;
-    position: relative;
     max-width: 50%;
 }
 
@@ -33,7 +32,7 @@ body.loading .loading-modal {
  font-family:serif;
  font-weight:bold;
 }
-/*
+
 .input {
     height: 100%;
     left: 0;
@@ -42,7 +41,7 @@ body.loading .loading-modal {
     position: absolute;
     top: 0;
     width: 100%
-}*/
+}
 
 .status {
     border-radius: 5px;
