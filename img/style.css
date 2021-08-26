@@ -21,11 +21,11 @@ body.loading .loading-modal {
     border: 2px dashed #ccc;
     max-width: 50%;
 }
-
+/*
 .info {
     margin-top: 11%;
 }
-
+*/
 .dropzone p {
     text-align: center;
   color:#0000ff;
