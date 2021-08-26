@@ -187,9 +187,8 @@
     if (res.success === true) {
     var get_link = res.data.link.replace(/^http:\/\//i, 'https://');
     document.querySelector('.status').classList.add('bg-success');
-    var content =
-    'Image : ' + '<br><input class="image-url" value=\"' + get_link + '\"/>' 
-    + '<img class="img" alt="3schools-Upload" src=\"' + get_link + '\"/>';
+    var content =`<input class="image-url" value=\"` + get_link + `\"/><button onclick="var t = document.querySelector('.image-url');t.select();document.execCommand('copy');">copy</button>' 
+    + '<img class="img" alt="3schools-Upload" src=\"` + get_link + `\"/>`;
     addImg('.status', content);
     }
     };
