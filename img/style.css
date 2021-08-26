@@ -1,7 +1,7 @@
 body.loading .loading-modal {
     display: block
 }
-
+/*
 .title {
     margin-right: auto;
     margin-left: auto;
@@ -16,13 +16,10 @@ body.loading .loading-modal {
 .title h1:hover {
     color: #3588DE;
 }
-
+*/
 .dropzone {
-    border: 4px dashed #ccc;
-    height: 200px;
+    border: 2px dashed #ccc;
     position: relative;
-    margin-right: auto;
-    margin-left: auto;
     max-width: 50%;
 }
 
@@ -31,13 +28,12 @@ body.loading .loading-modal {
 }
 
 .dropzone p {
-    /*height: 100%;*/
-    /*line-height: 200px;*/
-    margin: 0%;
     text-align: center;
-    width: 100%
+  color:#0000ff;
+ font-family:serif;
+ font-weight:bold;
 }
-
+/*
 .input {
     height: 100%;
     left: 0;
@@ -46,7 +42,7 @@ body.loading .loading-modal {
     position: absolute;
     top: 0;
     width: 100%
-}
+}*/
 
 .status {
     border-radius: 5px;
