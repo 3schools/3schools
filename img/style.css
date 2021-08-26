@@ -23,11 +23,11 @@ body.loading .loading-modal {
 
 .dropzone {
     border: 4px dashed #ccc;
-    height: 100px;
+    /*height: 100px;
     position: relative;
     margin-right: auto;
     margin-left: auto;
-    max-width: 50%;
+    max-width: 50%;*/
 }
 /*
 .info {
