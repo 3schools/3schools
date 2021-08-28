@@ -16,24 +16,47 @@
         <p id="url"></p>
     </strong>
 
+  
+
+<body>
+    
+    <div class="dropzone">
+        <div class="info"></div>
+    </div>
+    
+  
+  
+  
     <script>
-        const file = document.getElementById("file")
-        const img = document.getElementById("img")
-        const url = document.getElementById("url")
-        file.addEventListener("change", ev => {
-            const formdata = new FormData()
-            formdata.append("image", ev.target.files[0])
-            fetch("https://api.imgur.com/3/image/", {
-                method: "post",
-                headers: {
-                    Authorization: "a9fa50cf97cf7fa"
-                },
-                body: formdata
-            }).then(data => data.json()).then(data => {
-                img.src = data.data.link
-                url.innerText = data.data.link
-            })
-        })
+        function reportInfo(vars, showType = false) {
+    if (showType === true) console.log(typeof vars);
+    console.log(vars);
+}
+
+function addImg(ele, content) {
+    var myDIV = document.querySelector(ele);
+    var newContent = document.createElement('div');
+    newContent.innerHTML = content;
+
+    while (newContent.firstChild) {
+        myDIV.appendChild(newContent.firstChild);
+    }
+}
+
+var feedback = function(res) {
+    reportInfo(res, true);
+    if (res.success === true) {
+        var get_link = res.data.link.replace(/^http:\/\//i, 'https://');
+        document.querySelector('.status').classList.add('bg-success');
+        var content = `<br><input class="image-url" value=\"` + get_link + `\"/><button onclick="var t = document.querySelector('.image-url');t.select();document.execCommand('copy');">copy</button><br><img class="img" alt="Imgur-Upload" src=\"` + get_link + `\"/>`;
+        addImg('.status', content);
+    }
+};
+
+new Imgur({
+    clientid: 'a9fa50cf97cf7fa', //You can change this ClientID
+    callback: feedback
+});
     </script>
 
 </body>
