@@ -1,49 +1,38 @@
-<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>3 Schools</title>
-    <link href='3schools.png' rel='icon' type='image/x-icon'/>
-    <link rel="stylesheet" href="styles.css"/>
-    <script src="index.js" defer></script>
-    <script async src="https://cse.google.com/cse.js?cx=13ab1b8e66351a344"></script>
-   <link rel="manifest" href="manifest.webmanifest">
+  <head>
+    <title>PWA with FCM</title>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-messaging.js"></script>
+    <style>
+      .container {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #enableNotifications {
+        height: 80px;
+        width: 350px;
+        background-color: black;
+        color: white;
+        border: 1px;
+        border-radius: 500px;
+        font-size: 24px;
+      }
+    </style>
   </head>
-<body>
-<div class="appb">
- <div id="appb"><button class="btn add-button appbtn">📲 install our app</button>
-    <button class="btn b appbtn" onclick="document.querySelector('.appb').style.display='none';document.querySelector('#h3schools').classList.add('iframe')">🏠</button>
- <button class="btn d appbtn" onclick="document.querySelector('.appb').style.display='none';document.querySelector('#quiz3schools').classList.add('iframe')">Quiz Generator</button>
- <button id="share" class="btn a appbtn" >Share</button>
- </div>
-<img id="ask3schools" style="height:35px;width:35px;margin:4px;" src="3schools.png" alt="3schools & Quiz Generator">
-<div class="typeapu">
- <div class="typea"><h5><p class="ani"><a href="v1.html">NEW VERSION is Available !</a></p></h5>
- </div> 
-<center><a href="offline.html"><button>Offline ! play the game 🐍</button></a></center>
-</div><br/>
- <div class="gcse-search"></div>
-</div>
-<iframe style="display:none" id="h3schools" src="https://www.3schools.in"></iframe>
-<iframe style="display:none" id="quiz3schools" src="https://quizgenerator.3schools.in"></iframe>
-<script>
-	const share = e => {
-  if (navigator.share) {
-    navigator
-      .share({
-        title: "3schools",
-        text: "3schools & Quiz Generator",
-        url: "https://app.3schools.in"
-      })
-      .then(() => console.log("thanks for share"))
-      .catch(error => console.log("error", error));
-  }
-};
-if(!navigator.share) {
-  document.getElementById('tip').className = 'show'
-}
-document.getElementById("share").addEventListener("click", share);
-</script >
-</body>
+  <body>
+    <div class="container">
+      <button id="enableNotifications">🔔 Enable Notification</button>
+      <br />
+      <br />
+      <div>
+        <div id="token"></div>
+        <div id="err"></div>
+      </div>
+    </div>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>
