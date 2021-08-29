@@ -6,20 +6,14 @@ var cacheName = 'cache-v3';
 var files = [
     './',
     './index.html',
-    './css/styles.css',
     '/js/notify.js',
     '/js/app.js',
     '/js/sync.js',
     '/js/push.js',
     '/js/networkChange.js',
     './manifest.json',
-    './images/icon_16.png',
-    './images/icon_32.png',
-    './images/icon_192.png',
-    './images/icon_256.png',
-    './images/icon_512.png',
-    "https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-];
+    './bell.png',
+    ];
 
 
 self.addEventListener('install', (event) => {
