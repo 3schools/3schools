@@ -28,7 +28,7 @@ function initializeApp() {
 
     //Register the service worker
     navigator.serviceWorker
-      .register("/sw.js")
+      .register("/p/sw.js")
       .then(swReg => {
         console.log("Service Worker is registered", swReg);
         swRegistration = swReg;
