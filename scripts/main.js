@@ -63,10 +63,10 @@ function initializeFCM() {
       return messaging.getToken();
     })
     .then(token => {
-      TokenElem.innerHTML = "token is : " + token;
+     // TokenElem.innerHTML = "token is : " + token;
     })
     .catch(err => {
-      ErrElem.innerHTML = ErrElem.innerHTML + "; " + err;
+     // ErrElem.innerHTML = ErrElem.innerHTML + "; " + err;
       console.log("Unable to get permission to notify.", err);
     });
 }
@@ -96,8 +96,8 @@ function displayNotification() {
 
 function notification() {
   const options = {
-    body: "Testing Our Notification",
+    body: "You are eligible to get the notification.",
     icon: "./bell.png"
   };
-  swRegistration.showNotification("PWA Notification!", options);
+  swRegistration.showNotification("Ask 3schools", options);
 }
