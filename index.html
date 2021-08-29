@@ -1,11 +1,48 @@
-<html>
-  <head>
-    <title>PWA with FCM</title>
-    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-messaging.js"></script>
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>PWA Starter Demo</title>
+    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="PWA Starter Demo">
+    <meta name="application-name" content="PWA Starter Demo">
+    <link rel="icon" type="image/png" href="./images/icon_32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./images/icon_16.png" sizes="16x16">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-messaging.js"></script>
+    <script>
+      /* Initialize Firebase with your app settings
+      *  these settings can be found in firebase developer console  
+      */
+      var config = {
+        apiKey: "<Your API KEY>",
+        authDomain: "<FIREBASE PROJECT NAME>.firebaseapp.com",
+        databaseURL: "https://<FIREBASE PROJECT NAME>.firebaseio.com",
+        projectId: "<FIREBASE PROJECT NAME>",
+        storageBucket: "topics/push_notifications",
+        messagingSenderId: "<YOUR SENDER ID>"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+</head>
+
+<body>
+    Go Offline & hit this button <button onclick="registerSync()">Trigger Offline Action</button>
+                
+
+    <script src="./js/notify.js"></script>
+    <script src="./js/networkChange.js"></script>
+    <script defer src="./js/push.js"></script>
+    <script src="./js/sync.js"></script>
+    <script defer src="./js/app.js"></script>
     
-      <button id="enableNotifications">🔔 Enable Notification</button>
-      
-    <script src="scripts/main.js"></script>
-  </body>
+</body>
+
 </html>
