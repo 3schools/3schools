@@ -97,7 +97,8 @@ function displayNotification() {
 function notification() {
   const options = {
     body: "You are eligible to get the notification.",
-    icon: "./bell.png"
+    icon: "./bell.png",
+    "click_action" : "https://ask.3schools.in"
   };
   swRegistration.showNotification("Ask 3schools", options);
 }
