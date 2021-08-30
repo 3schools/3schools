@@ -1,7 +1,11 @@
 {
-    "name": "pwa-starter-demo",
+    "name": "Ask 3schools",
+    "short_name": "3schools",
+    "background_color": "#63e9f2",
+    "theme_color": "#778af7",
+    "start_url": "index.html"
     "version": "1.0.0",
-    "author": "https://github.com/gauravbehere",
+    "author": "https://ask.3schools.in",
     "license": "MIT",
     "scripts": {
         "start": "node server.js"
