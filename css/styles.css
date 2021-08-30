@@ -1,118 +1,237 @@
- body {
-    padding: 0;
-    margin: 0;    
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-header, footer {
-    height: 50px;    
-    flex:1;
-    display: flex;
-    background: #000;
-    color: #fff;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-}
-
-#contentDiv {
-    height: calc(100vh - 130px);
-    background: #fff;
-    color: #000;
-    overflow-x: hidden;
-    overflow-y: auto;
-    max-width: 100%;
-    margin-top: 30px;
-}
-
-.logo{
-    display: flex;
-    background: url('./../images/icon_32.png');
-    height: 32px;
-    width: 32px;
-    position: absolute;
-    margin-left: 20px;
-    left: 0;
-    cursor: pointer;
-}
-
-#contentDiv .feature{
-    min-height: 250px;
-    min-width: 30%;
-    max-width: 30%;
-    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-    margin: 1%;
-    float: left;
-    padding: 5px;
-}
-
-footer a{
-    color: rgb(247, 162, 4);
-    text-decoration: none;
-}
-
-.featureIcon{
-    height: 250px;
-    width: 30%;
-    float: left;
-    font-size: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;   
-}
-
-.featureContent{
-    height: 250px;
-    float: right;
-    color: #0f0e0e;
-    width: 69%;
-    border-left: 1px solid #e3d0d0;
-}
-
-.featureContent > div{
-    text-align: center;
-    height: 10%;
-    font-weight: 600; 
-}
-
-.featureContent > article{
-    height: 90%;
-    font-weight: 400; 
-    padding: 20px;
-}
-
-@media only screen and (max-width: 1200px) {
-    #contentDiv .feature {
-        min-height: 250px;
-        min-width: 45%;
-        max-width: 45%;
-        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-        margin: 1%;
-        float: left;
+ :root {
+    --app-background: radial-gradient(#cdd0ff 1px,transparent 0),radial-gradient(#cdd0ff 1px,#fefefe 0);
+    --app-selection-color: #6cd0ff;
+    --text-base-color: #000;
+    
+    --dark-app-background: radial-gradient(#15155a 1px,#111 0),radial-gradient(#15155a 1px,#111 0);
+    --dark-app-selection-color: #111;
+    --dark-text-base-color: #fff;
     }
-}
-
-@media only screen and (max-width: 800px) {
-    #contentDiv .feature {
-        min-height: 250px;
-        min-width: 95%;
-        max-width: 95%;
-        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-        margin: 1%;
-        float: left;
+    *{
+    text-decoration:none;
+    font-family:serif;
+    box-sizing:border-box;
+    } 
+    body {
+    background-color: var(--app-background-color);
+    background-image: var(--app-background);
+    background-size: 20px 20px;
+    background-position: 30px 30px;
+    color: var(--text-base-color);
+    margin:0;
     }
-}
+h1,h2,he,h4,h5{font-size:1.4rem;}
+input:focus,textarea:focus{outline:none;}
+     
+       
+     #quizHeader{
+      background:linear-gradient(to right top , #ffccff , #ccffcc , #ffffcc,#ffd6cc,#ccccff);
+      box-shadow:0 10px 20px 0 rgba(60,60,60,0.4);
+      border-radius:0 0 16px 16px;
+      padding:20px 10px;
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:10;
+       }
+       #quizHeader button{
+       position:absolute;
+       top:20px;
+       left:-6px;
+       padding:5px 8px;
+       border-radius:10px;
+       border:none;
+       background-color:aqua;
+       }
+      #quizHeader h1{
+        text-align:center;
+        color:#ff00ff;
+        text-shadow:4px 5px 4px #000f0f;
+        margin:0;
+        font-size:25px;
+        }
+        .searchBox input[type=text]:first-of-type{width:80px;}
+        .searchBox input[type=text],.searchBox input[type=submit]{
+        position:absolute;
+        right:3px;
+        top:23px;
+        padding:5px 8px;
+        border-radius:50px;
+        border:none;
+        width:29px;
+        box-shadow:1px 1px 4px #0D7aBE;
+        transition-duration:.3s;
+        }
+        .searchBox input[type=text]:focus{
+        width:200px;
+        outline:none;
+        }
+    .userIcon{
+   position:absolute;
+   right:4px;
+   top:16px;
+   }
+   .userIcon img{
+   width:37px;
+   height:37px;
+   border:2px yellow inset;
+   border-radius:50px;
+   box-shadow:0 0 5px rgba(60,60,60,0.5);
+   cursor:pointer;
+   }    
 
-/*Icons*/
-.bell{
-    color: #5cadf3;
-}
-.sync{
-    color: #d8a33f;
-}
+.whome{
+   display:flex;
+   align-content:center;
+   justify-content:center;
+   }
+   .clock{
+   background-color:#000;
+   width:200px;
+   padding:8px 15px;
+   text-align:center;
+   border-radius:5px;
+   margin-top:50px;
+   color:#ffffff;
+   }
+   
+   .welcome{
+   color:#ff0000;
+   width:98%;
+   background-color:#ff0;
+   }
+       article{margin-top:80px;padding:5px;}
+       
+       #article {
+        margin:auto;
+        padding:5px;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-between;
+        }
+        
+        #article button{
+        width:45vw;
+        height:16vh;
+        padding:20px 40px;
+        margin:8px 0;
+        background:linear-gradient(to right top , #ffccff , #ccffcc , #ffffcc,#ffd6cc,#ccccff);
+        box-shadow:0 1px 5px 0 rgba(60,60,60,0.3);
+        border:;
+        border-radius:5px;
+        }
+       .body{
+       padding:4px 9px;
+        }
+        
+        #toc{margin:0;padding:5px 3px;}
+        #toc button{
+        width:100%;
+        padding:16px 4px;
+        margin-top:6px;
+        position:relative;
+        background:linear-gradient(to left , #ffccff , #ccffcc , #ffffcc,#ffd6cc,#ccccff);
+        border:;
+        }
+        #toc button:before{
+        content:"🔰";
+        position:absolute;
+        left:4px;
+        top:4px;
+        font-size:34px;
+        }
+        #toc button:after{
+        content:"»";
+        position:absolute;
+        right:5px;
+        top:2px;
+        font-size:36px;
+        color:#ff0000;
+        }
+        
+        .stickContent button{
+        padding:8px 14px;
+        margin:0px 8px;
+        font-size:19px;
+        border-radius:5px;
+        border:none;
+        }
+        .qbox{
+        padding:8px;
+        margin:10px 3px;
+        background-color:#fcfcfc;
+        border-radius:9px;
+        box-shadow:0px 2px 6px rgba(60,70,70,0.4);
+        }
+        .qbox strong{color:#ff0000;}
+        .qbox span{color:green;}
+        
+        .stickContent button:hover,.searchBox input[type=submit]{
+        background:linear-gradient(to right, #ffccff , #ccffcc , #ffffcc,#ffd6cc,#ccccff);
+        }
+        
+     .stick{
+        position:fixed;
+        bottom:0;left:0;right:0;
+        width:100%;
+        min-height:50px;
+        max-height:80px;
+        padding:5px 5px 0;
+        border-radius:15px 0 0 0;
+        background:linear-gradient(to left , #ffccff , #ccffcc , #ffffcc,#ffd6cc,#ccccff);
+        box-shadow:0 -10px 20px 0 rgba(60,60,60,0.4);
+        transition-duration:0.6s; display:flex;align-items:center;justify-content:center;z-index:40;} 
+        .stickClose{width:40px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:12px 0 0;position:absolute;right:0;top:-30px;background:linear-gradient(to right bottom, #ffccff , #ccffcc , #ffffcc,#ffd6cc,#ccccff); box-shadow:0 1px 20px 0 rgba(60,60,60,0.4);} 
+        .stickContent{
+        flex-grow:1;
+        overflow:hidden;
+        display:flex;
+        justify-content:space-between;
+        position:relative;
+        } 
+        .stickB:checked ~ .stick .stickContent{display:none} 
+        .stickB:checked ~ .stick{padding:0;min-height:0} 
+      
+        .hidden{display:none}
+        
+     .fullWeb{
+       position: fixed;
+       background:transparent;
+       border:none;
+       top:0; right: 0;
+       bottom: 0; left: 0;
+       width: 100%;
+       height: 100%;
+       display:block!important;
+        }
 
-.bolt{
-    color: #FF0000;
-}
-.wifi{
-    color: #a0a2a3;
-}
+table {
+		width:100%;
+		border:1px solid #C0C0C0;
+		border-collapse:collapse;
+		padding:5px;
+                max-width:100%;
+	}
+table th {
+		border:1px solid #C0C0C0;
+		padding:5px;
+		background:#F0F0F0;
+	}
+table td {
+		border:1px solid #C0C0C0;
+		padding:5px;
+	}
+
+        body.dark-mode ,.dark-mode .stick button{
+        background-color: var(--dark-app-background-color);
+        background-image: var(--dark-app-background);
+        background-size: 40px 40px;
+        background-position: 20px 20px;
+        color: var(--dark-text-base-color);
+        }
+        .dark-mode .stick button:hover{
+        background:linear-gradient(to left , #ffccff , #ccffcc , #ffffcc,#ffd6cc,#ccccff);
+        transition-duration:2s;
+        }
+        
