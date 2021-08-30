@@ -11,7 +11,7 @@
       if (navigator.onLine) {
         navigator.serviceWorker.ready
         .then(function (registration) {
-         registration.showNotification('Ask 3schools', {
+         registration.showNotification('You are back online', {
           body: 'Page is ready to view',
           icon: '/images/icon_256.png',
           vibrate: [200, 100, 200, 100, 200, 100, 200],
@@ -22,7 +22,7 @@
       else {
         navigator.serviceWorker.ready
         .then(function (registration) {
-          registration.showNotification('Ask 3schools', {
+          registration.showNotification('No Internet', {
           body: 'Ask 3schools will let you know when this page is ready',
           icon: '/images/icon_256.png',
           vibrate: [200, 100, 200, 100, 200, 100, 200],
