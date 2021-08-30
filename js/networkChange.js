@@ -11,13 +11,23 @@
       if (navigator.onLine) {
         navigator.serviceWorker.ready
         .then(function (registration) {
-          registration.showNotification('You are back online....')
+         registration.showNotification('Ask 3schools', {
+          body: 'Page is ready to view',
+          icon: '/images/icon_256.png',
+          vibrate: [200, 100, 200, 100, 200, 100, 200],
+          tag: 'You are back online'
+        }); 
         });        
       }
       else {
         navigator.serviceWorker.ready
         .then(function (registration) {
-          registration.showNotification('Network connection lost....')
+          registration.showNotification('Ask 3schools', {
+          body: 'Ask 3schools will let you know when this page is ready',
+          icon: '/images/icon_256.png',
+          vibrate: [200, 100, 200, 100, 200, 100, 200],
+          tag: 'No Internet'
+        }); 
         });
       }
     }
