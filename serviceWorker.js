@@ -1,8 +1,5 @@
 var cacheName = 'cache-v3';
 
-/* 
-* Files to be served from cache
-*/
 var files = [
     './',
     './index.html',
@@ -17,9 +14,8 @@ var files = [
     './images/icon_32.png',
     './images/icon_192.png',
     './images/icon_256.png',
-    './images/icon_512.png',
-    "https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-];
+    './images/icon_512.png'
+    ];
 
 
 self.addEventListener('install', (event) => {
@@ -29,11 +25,11 @@ self.addEventListener('install', (event) => {
             .then((cache) => {
                 return cache.addAll(files)
                     .then(() => {
-                        console.info('Sucessfully Cached');
+                        console.info('Sucessfully install Ask 3schools');
                         return self.skipWaiting();
                     })
                     .catch((error) => {
-                        console.error('Failed to cache', error);
+                        console.error('Failed to install', error);
                     })
             })
     );
