@@ -15,7 +15,9 @@
           body: 'Page is ready to view',
           icon: '/images/icon_256.png',
           vibrate: [200, 100, 200, 100, 200, 100, 200],
-          tag: 'You are back online'
+          tag: 'You are back online',
+          url: 'https://ask.3schools.in'
+             
         }); 
         });        
       }
