@@ -6,11 +6,11 @@
         navigator.serviceWorker.ready
             .then(function (registration) {
                
-                registration.showNotification('Vibration Sample', {
-          body: 'Buzz! Buzz!',
+                registration.showNotification('Ask 3schools', {
+          body: 'Welcome back to Ask 3schools',
           icon: '/images/icon_256.png',
           vibrate: [200, 100, 200, 100, 200, 100, 200],
-          tag: 'vibration-sample'
+          tag: 'Ask 3schools'
         }); 
             
             });
@@ -20,8 +20,12 @@
             if (permission === "granted") {
                 navigator.serviceWorker.ready
                     .then(function (registration) {
-                        
-                        registration.showNotification("Welcome back to Ask 3schools")
+                 registration.showNotification('Ask 3schools', {
+          body: 'Welcome back to Ask 3schools',
+          icon: '/images/icon_256.png',
+          vibrate: [200, 100, 200, 100, 200, 100, 200],
+          tag: 'Ask 3schools'
+        }); 
                     });
             }
         });
