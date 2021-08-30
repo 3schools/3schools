@@ -5,11 +5,8 @@
     else if (Notification.permission === "granted") {
         navigator.serviceWorker.ready
             .then(function (registration) {
-                /**
-                 * Notifying the user with a sample notification
-                 * Can be a greeting :)
-                 */
-                registration.showNotification("Sample Push Notification.")
+                
+                registration.showNotification("Welcome back to Ask 3schools")
             });
     }
     else if (Notification.permission !== "denied") {
@@ -17,11 +14,8 @@
             if (permission === "granted") {
                 navigator.serviceWorker.ready
                     .then(function (registration) {
-                        /**
-                        * Notifying the user with a sample notification
-                        * Can be a greeting :)
-                        */
-                        registration.showNotification("Sample Push Notification.")
+                        
+                        registration.showNotification("Welcome back to Ask 3schools")
                     });
             }
         });
