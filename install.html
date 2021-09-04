@@ -16,7 +16,7 @@
     <script src="index.js" defer></script>
 </head>
 
-<body>
+<body><div class="appb">
     <header id="quizHeader">
 	 <button onclick="share();">share</button>
          <h1>Welcome Back</h1>
@@ -38,16 +38,16 @@
    </div>
    
 <div class="whome">
-    <button class="clock" onclick="window.open('#','_self')">Start Learning </button>
+    <button class="clock" onclick="document.querySelector('.appb').style.display='none';document.querySelector('#iframe').classList.add('fullWeb')">Start Learning </button>
    </div>
-   </article>
+   </article></div>
     <footer>
          <input  class='stickB hidden' id="stickB" type='checkbox'/>
        <div class='stick'>
           <label class='stickClose' for='stickB'>❌</label>
          <div class='stickContent'>
              <button onclick="window.open('#','_self')">🔔</button>
-	<button onclick="window.open('#','_self')"> 🌐</button>
+	<button onclick="document.querySelector('.appb').style.display='none';document.querySelector('#iframe').classList.add('fullWeb')"> 🌐</button>
              <button onclick="window.open('#','_self')">🎁</button>
              <button onclick="window.open('#','_self')">🔎</button>
              <button class="addbtn">📲</button>
@@ -126,7 +126,12 @@ const dayName = ["রবিবার", "সোমবার","মঙ্গলব�
 
   gtag('config', 'G-0M21P4SHE3');
 </script> 
-
+<iframe style="display:none" id="iframe" src="https://www.3schools.in"></iframe>
+<script>
+  var domain = window.location.href;
+  var doma = domain.substring(domain.lastIndexOf("?url=")+5);
+  document.getElementById("iframe").src=doma;
+</script>
     <script src="./js/notify.js"></script>
     <script src="./js/networkChange.js"></script>
     <script defer src="./js/push.js"></script>
