@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+  <html onselectstart='return false;'>
+     <head>
+       <title>Ask 3schools</title>
+      <meta content='width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=5.0' name='viewport'/>
+      <link href='ask3schools.png' rel='icon' type='image/x-icon'/>
+      <link rel="stylesheet" href="style.css"/>
+     <script src="index.js" defer></script>
+     <link rel="manifest" href="manifest.webmanifest">
+    <style>
+.userProfile {
+ background-color:#f091fa;
+ padding:10px 20px;
+ border-radius:3px;
+ margin:10px;
+ }
+img{
+            width:40%;
+            flex: 0 0 auto;
+            cursor: pointer;
+            margin:10px;
+            border-radius:10px;
+            box-shadow:1px 1px 4px rgba(60,60,60,0.2);
+            
+        }
+  #userN{
+color:#ff0000;
+}
+.userProfile input{
+width:120px;
+}  
+    </style>
+    </head>
+ <body>
+    <header id="quizHeader">
+	 <button onclick="share();">share</button>
+         <h1>Ask 3schools</h1>
+	 <div class="userIcon">
+         <img id="userI" onclick="window.open('/profile.html','_self')" src="ask3schools.png">
+        </div>
+     </header>
+   <article>
+     <div class="userProfile">
+ <div id="uC"><input id="uN" placeholder="Enter Your Name" >
+ <input type="file" accept="image/*" onchange="loadFile(event)">
+ <input id="uImg" style="display:none;">
+ <button onclick="addUser()">ok</button></div>
+ <center>
+ <img id="userImg" src="ask3schools.png">
+ <h3 id="userN">User Name</h3></center>
+ <p onclick="editP()">edit</p>
+</div>
+   </article>
+   <footer>
+         <input  class='stickB hidden' id="stickB" type='checkbox'/>
+       <div class='stick'>
+          <label class='stickClose' for='stickB'>❌</label>
+         <div class='stickContent'>
+         <button onclick="history.back()">🔙</button>
+         <button onclick="window.open('/search.html','_self')">🔎</button>
+         <button class="addbtn">📲</button>
+          </div>
+       </div>
+     </footer>
+   <script>
+	 var loadFile = function(event) {
+ var reader = new FileReader();
+ reader.onload = function(){
+ var output = document.getElementById('uImg');
+ output.value = reader.result;
+ };
+ reader.readAsDataURL(event.target.files[0]);
+ 
+ };
+
+function addUser(){
+ var uN = document.getElementById("uN").value;
+ var uImg= document.getElementById("uImg").value;
+ 
+ localStorage.setItem("userName", uN);
+ localStorage.setItem("userPic", uImg);
+ 
+ document.getElementById("uC").style.display="none";
+ userPic();
+ }
+ 
+ function userPic(){
+  var userName = localStorage.getItem("userName");
+  var userImg = localStorage.getItem("userPic");
+  if(userName != null){
+  document.getElementById("userN").innerHTML= userName;
+  document.getElementById("userImg").src= userImg;
+  document.getElementById("userI").src= userImg;
+  document.getElementById("uC").style.display="none";
+  }
+  }
+  function editP(){document.getElementById("uC").style.display="block";}
+ userPic();
+	 </script>
+  </body>
+</html>
