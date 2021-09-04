@@ -110,8 +110,9 @@ function displayDates(){
   var month = dateObj.getUTCMonth();
   var day = dateObj.getDay();
 
+	
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const dayName = ["রবিবার", "সোমবার","মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"];
+const dayName = ["Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
  document.getElementById('day').innerHTML = date;
  document.getElementById('month').innerHTML = monthNames[month];
@@ -132,11 +133,11 @@ const dayName = ["রবিবার", "সোমবার","মঙ্গলব�
   var doma = domain.substring(domain.lastIndexOf("?url=")+5);
   document.getElementById("iframe").src=doma;
 </script>
-    <script src="./js/notify.js"></script>
+  <!--  <script src="./js/notify.js"></script>
     <script src="./js/networkChange.js"></script>
     <script defer src="./js/push.js"></script>
     <script src="./js/sync.js"></script>
     <script defer src="./js/app.js"></script>
-    
+    -->
 </body>
 </html>
