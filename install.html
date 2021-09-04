@@ -46,9 +46,9 @@
        <div class='stick'>
           <label class='stickClose' for='stickB'>❌</label>
          <div class='stickContent'>
-             <button onclick="window.open('#','_self')">🔔</button>
-	<button onclick="document.querySelector('.appb').style.display='none';document.querySelector('#iframe').classList.add('fullWeb')"> 🌐</button>
-             <button onclick="window.open('#','_self')">🎁</button>
+         <button onclick="history.back()">🔙</button>
+<button onclick="document.querySelector('.appb').style.display='none';document.querySelector('#iframe').classList.add('fullWeb')"> 🌐</button>
+             <button onclick="location.reload()">🏠</button>
              <button onclick="window.open('#','_self')">🔎</button>
              <button class="addbtn">📲</button>
           </div>
@@ -140,4 +140,4 @@ const dayName = ["Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday"
     <script defer src="./js/app.js"></script>
     -->
 </body>
-</html>
+</html>   
