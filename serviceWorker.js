@@ -1,4 +1,4 @@
-var cacheName = 'cache-v3';
+var cacheName = 'cache-v98';
 
 var files = [
     './',
@@ -10,6 +10,13 @@ var files = [
     '/js/push.js',
     '/js/networkChange.js',
     './manifest.json',
+     'sw.js',
+      'index.js',
+      'install.html',
+      'search.html',
+      '404.html',
+      'profile.html',
+      'serviceWorker.js',
     './images/icon_16.png',
     './images/icon_32.png',
     './images/icon_192.png',
@@ -25,7 +32,7 @@ self.addEventListener('install', (event) => {
             .then((cache) => {
                 return cache.addAll(files)
                     .then(() => {
-                        console.info('Sucessfully install Ask 3schools');
+                        console.info('Sucessfully install  3schools');
                         return self.skipWaiting();
                     })
                     .catch((error) => {
