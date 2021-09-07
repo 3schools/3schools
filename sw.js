@@ -13,6 +13,7 @@ self.addEventListener('install', (e) => {
      'sw.js',
       'index.js',
       'install.html',
+      'editor.html',
       'search.html',
       '404.html',
       'profile.html',
