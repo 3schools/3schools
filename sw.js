@@ -10,6 +10,7 @@ self.addEventListener('install', (e) => {
     '/js/push.js',
     '/js/networkChange.js',
     './manifest.json',
+     'manifest.webmanifest',
      'sw.js',
       'index.js',
       'install.html',
