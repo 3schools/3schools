@@ -15,6 +15,7 @@ self.addEventListener('install', (e) => {
       'install.html',
       'editor.html',
       'search.html',
+      'home.html',
       '404.html',
       'profile.html',
       'serviceWorker.js',
