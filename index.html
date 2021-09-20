@@ -131,13 +131,8 @@ const dayName = ["Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday"
 <script>
   var domain = window.location.href;
   var doma = domain.substring(domain.lastIndexOf("?url=")+5);
-  document.getElementById("iframe").src=doma;
+ localStorage.setItem("schoolsCode", doma);
+ document.getElementById("iframe").src=localStorage.getItem("schoolsCode");
 </script>
-    <script src="./js/notify.js"></script>
-    <script src="./js/networkChange.js"></script>
-    <script defer src="./js/push.js"></script>
-    <script src="./js/sync.js"></script>
-    <script defer src="./js/app.js"></script>
-    
 </body>
 </html>   
