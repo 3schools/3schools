@@ -2,7 +2,7 @@
 	"name": "Welcome Back",
 	"short_name": "App",
 	"description": "Create your own app with the help of 3schools. ",
-	"start_url": "./index.html?ref=home",
+	"start_url": "index.html",
 	"display": "standalone",
 	"orientation": "portrait",
 	"background_color": "#63e9f2",
@@ -18,11 +18,5 @@
 			"type": "image/png",
 			"sizes": "512x512"
 		}	
-	],
-	"author": {
-		"name": "Apu",
-		"website": "https://www.3schools.in"		
-    },
-    "gcm_sender_id": "103953800507",
-    "gcm_user_visible_only": true
+	]
 }
