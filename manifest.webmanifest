@@ -1,0 +1,19 @@
+{
+  "background_color": "#63e9f2",
+  "theme_color": "#778af7",
+  "version":"1.2.3",
+  "description": "Create your own app with the help of 3schools.",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "images/icon_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "Welcome Back",
+  "version":"1.2.3",
+  "short_name": "App",
+  "start_url": "index.html"
+} 
