@@ -35,7 +35,7 @@ function search(string){
  }
 
 function share() {
-    var text = 'Ask 3schools';
+    var text = 'Share Our App';
     if ('share' in navigator) {
         navigator.share({
             title: document.title,
