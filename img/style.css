@@ -6,6 +6,7 @@ padding:5px 16px;
 box-shadow:0 0 5px rgba(60,60,60,0.5);
 margin:6px auto;
 outline:none;
+max-width:100%;
 }
 button {
 margin-left:9px;
