@@ -28,7 +28,6 @@ margin-left:9px;
     /*height: 100%;*/
     /*line-height: 200px;*/
     margin: 0%;
-    text-align: center;
     width: 100%;
     font-weight:bold;
     color:#0000ff;
@@ -52,9 +51,6 @@ margin-left:9px;
     margin-right: auto;
 }
 
-.image-url {
-    width: 50%;
-}
 
 .dropzone.dropzone-dragging {
     border-color: #000
@@ -76,10 +72,6 @@ margin-left:9px;
     margin-right: auto;
     margin-top: 15%;
     margin-bottom: 15%;
-}
-
-.img {
-    width: 100%;
 }
 
 @charset "UTF-8";
