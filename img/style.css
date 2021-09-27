@@ -13,11 +13,17 @@ body.loading .loading-modal {
     margin-left: auto;
     max-width: 50%;
 }
-/*
-.info {
-    margin-top: 11%;
+.image-url,.image-urls,button,img{
+border:1px #ff00ff dotted;
+border-radius:15px;
+padding:5px 16px;
+box-shadow:0 0 5px rgba(60,60,60,0.5);
+margin:6px auto;
+outline:none;
 }
-*/
+button {
+margin-left:9px;
+}
 .dropzone p {
     /*height: 100%;*/
     /*line-height: 200px;*/
