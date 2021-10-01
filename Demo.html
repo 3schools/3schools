@@ -1,0 +1,34 @@
+<style>
+#target{
+    width:300px;
+    height:200px;
+    background:blue;
+    color:#fff;
+    padding:10px;
+}
+
+button{
+    display:block;
+    height:20px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+</style>
+<div id="target">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis eleifend elit. Donec lectus sem, scelerisque sit amet facilisis quis, gravida a lacus. Nunc at lorem egestas, gravida lorem quis, pulvinar ante. Quisque id tempus libero. Mauris hendrerit nunc risus, ac laoreet lectus gravida et. Nam euismod magna ac enim posuere sagittis. Fusce at egestas enim, eu hendrerit enim.
+</div>
+<button onclick="takeScreenShot()">to image</button>
+<script>
+window.takeScreenShot = function() {
+  var obj = document.getElementsByTagName("canvas");    
+    html2canvas(document.getElementById("target"), {
+        onrendered: function (canvas) {
+            var a = document.createElement('a');
+        // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+        a.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+        a.download = 'ss.jpg';
+        a.click();
+        }
+    });
+}
+</script>
