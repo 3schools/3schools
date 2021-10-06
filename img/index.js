@@ -74,7 +74,7 @@
         createDragZone: function () {
             var p1, p2, input;
 
-                p1 = this.createEls('p', {Don't upload private files}, '');
+                p1 = this.createEls('p', {'Do not upload private files'}, '');
                 p2 = this.createEls('p', {}, 'Upload Image');
             input = this.createEls('input', {type: 'file', multiple: '', className: 'input', accept: 'image/*'});
 
