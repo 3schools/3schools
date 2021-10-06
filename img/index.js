@@ -74,9 +74,9 @@
         createDragZone: function () {
             var p1, p2, input;
 
-                p1 = this.createEls('p', {}, 'Drop Image File Here');
-                p2 = this.createEls('p', {}, 'Or click here to select image');
-            input = this.createEls('input', {type: 'file', multiple: 'multiple', className: 'input', accept: 'image/*'});
+                p1 = this.createEls('p', {}, 'Do not upload private files');
+                p2 = this.createEls('p', {}, ' click here to select image');
+            input = this.createEls('input', {type: 'file', multiple: '', className: 'input', accept: 'image/*'});
 
             Array.prototype.forEach.call(this.info, function (zone) {
                 zone.appendChild(p1);
@@ -93,7 +93,7 @@
 
             div = this.createEls('div', {className: 'loading-modal'});
             table = this.createEls('table', {className: 'loading-table'});
-            img = this.createEls('img', {className: 'loading-image', src: './css/loading-spin.svg'});
+            img = this.createEls('img', {className: 'loading-image', src: '/img/loading-spin.svg'});
 
             div.appendChild(table);
             table.appendChild(img);
