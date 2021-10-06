@@ -187,7 +187,7 @@ var feedback = function(res) {
     if (res.success === true) {
         var get_link = res.data.link.replace(/^http:\/\//i, 'https://');
         document.querySelector('.status').classList.add('bg-success');
-        var content = `<br><input class="image-url" value=\"` + get_link + `\"/><button onclick="var t = document.querySelector('.image-url');t.select();document.execCommand('copy');">copy</button> <br><br><input class="image-urls" value=\"<img src='` + get_link + `'/>\"/><button onclick="var t = document.querySelector('.image-urls');t.select();document.execCommand('copy');">copy</button><br> <img class="img" alt="Image-Upload" src=\"` + get_link + `\"/>`;
+        var content = `<br><input onclick="document.querySelector('.image-url').select();document.execCommand('copy');" class="image-url" value=\"` + get_link + `\"/> <br><br><input onclick="document.querySelector('.image-urls').select();document.execCommand('copy');"  class="image-urls" value=\"<img src='` + get_link + `'/>\"/> <br/><br/> <img class="img" alt="Image-Upload" src=\"` + get_link + `\"/>`;
         addImg('.status', content);
     }
 };
