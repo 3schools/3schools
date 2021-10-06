@@ -61,8 +61,13 @@ body.loading .loading-modal {
     margin-right: auto;
 }
 
-.image-url {
-    width: 50%;
+.image-url ,.image-urls{
+padding:5px 16px;
+border:1px dotted #ff00ff;
+border-radius:14px;
+box-shadow:1px 0 5px rgba(60,60,60,0.5);
+cursor:pointer;
+outline:none;
 }
 
 .dropzone.dropzone-dragging {
