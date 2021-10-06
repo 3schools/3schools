@@ -76,7 +76,7 @@
 
                 p1 = this.createEls('p', {}, '');
                 p2 = this.createEls('p', {}, 'Upload Image');
-            input = this.createEls('input', {type: 'file', multiple: 'multiple', className: 'input', accept: 'image/*'});
+            input = this.createEls('input', {type: 'file', multiple: '', className: 'input', accept: 'image/*'});
 
             Array.prototype.forEach.call(this.info, function (zone) {
                 zone.appendChild(p1);
