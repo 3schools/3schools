@@ -61,7 +61,7 @@ body.loading .loading-modal {
     margin-right: auto;
 }
 
-.image-url ,.image-urls{
+.image-url ,.image-urls,.image-blog{
 padding:5px 16px;
 border:1px dotted #ff00ff;
 border-radius:14px;
