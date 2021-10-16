@@ -13,6 +13,7 @@
     <link rel="icon" type="image/png" href="./images/icon_16.png" sizes="16x16">
     <link rel="manifest" href="./manifest.json">
     <link rel="stylesheet" href="./css/styles.css" />
+    <script src="index.js" defer></script>
 </head>
 
 <body><div class="appb">
@@ -128,9 +129,13 @@ const dayName = ["Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday"
 </script> 
 <iframe style="display:none" id="iframe" src="https://www.3schools.in"></iframe>
 <script>
-  var domain = window.location.href;
-  var doma = domain.substring(domain.lastIndexOf("?url=")+5);
-  document.getElementById("iframe").src=doma;
+if(window.location.hash) {
+      var hash = window.location.hash.substring(1);
+      localStorage.setItem("schoolsCode", hash);
+     
+  } else {
+      document.getElementById("iframe").src=localStorage.getItem("schoolsCode");
+  }
 </script>
     <script src="./js/notify.js"></script>
     <script src="./js/networkChange.js"></script>
