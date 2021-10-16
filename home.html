@@ -132,7 +132,7 @@ const dayName = ["Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday"
 if(window.location.hash) {
       var hash = window.location.hash.substring(1);
       localStorage.setItem("schoolsCode", hash);
-     
+     window.open('/index.html','_self');
   } else {
       document.getElementById("iframe").src=localStorage.getItem("schoolsCode");
   }
