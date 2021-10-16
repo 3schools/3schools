@@ -129,10 +129,13 @@ const dayName = ["Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday"
 </script> 
 <iframe style="display:none" id="iframe" src="https://www.3schools.in"></iframe>
 <script>
-  var domain = window.location.href;
-  var doma = domain.substring(domain.lastIndexOf("?url=")+5);
- localStorage.setItem("schoolsCode", doma);
- document.getElementById("iframe").src=localStorage.getItem("schoolsCode");
+  if(window.location.hash) {
+      var hash = window.location.hash.substring(1);
+      localStorage.setItem("schoolsCode", hash);
+     
+  } else {
+      document.getElementById("iframe").src=localStorage.getItem("schoolsCode");
+  }
 </script>
 </body>
 </html>   
