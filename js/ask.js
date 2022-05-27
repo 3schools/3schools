@@ -53,7 +53,40 @@ let name = text.substr(text.indexOf("নাম") + 3); // Split name from text
     text.indexOf("তুমি খারাপ") >= 0
   ) {
     speak(` দুঃখিত, আমি কী কিছু ভুল করে ফেলেছি? এখনো আমি পুরোপুরি সব শিখিনি।`);
-  } else {
+  }else if (
+    text.indexOf("কী পার") >=0 ||
+    text.indexOf("সাহায্য") >=0 ||
+    text.indexOf("হেল্প") >=0 ||
+    text.indexOf("কর") >=0 
+    ) {
+    speak(`আমি আপনাকে প্রশ্ন ও উত্তর সন্ধান করতে সাহায্য করতে পারি`);
+    }
+  else if (
+    text.indexOf("ওপেন ইউটিউব") >=0 ||
+    text.indexOf("ইউটিউব খুলুন") >=0 ||
+    text.indexOf("ইউটিউব ওপেন করো") >=0 ||
+    text.indexOf("ইউটিউব") >=0 
+    ) {
+    speak(`খুলছি ইউটিউব`);
+    window.open(`https://youtube.com/`,`_self`);
+  } else if (
+    text.indexOf("ওপেন হোয়াটসঅ্যাপ") >=0 ||
+    text.indexOf("হোয়াটসঅ্যাপ খুলুন") >=0 ||
+    text.indexOf("হোয়াটসঅ্যাপ ওপেন করো") >=0 ||
+    text.indexOf("হোয়াটসঅ্যাপ") >=0 
+    ) {
+    speak(`খুলছি হোয়াটসঅ্যাপ`);
+    window.open(`https://api.whatsapp.com/`,`_self`);
+  }else if (
+    text.indexOf("ওপেন ফেসবুক") >=0 ||
+    text.indexOf("ফেসবুক খুলুন") >=0 ||
+    text.indexOf("ফেসবুক ওপেন করো") >=0 ||
+    text.indexOf("ফেসবুক") >=0 
+    ) {
+    speak(`খুলছি ফেসবুক`);
+    window.open(`https://www.facebook.com/`,`_self`);
+  }
+  else {
     speak(`আক্স থ্রি স্কুলসে আমি এইগুলো খুজে পেয়েছি`);
     document.querySelector("#search-form").submit();
   }
