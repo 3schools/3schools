@@ -1,3 +1,42 @@
+$('.searchbar input').on('keyup', function(e) {
+        var textinput = $(this).val()
+        if (textinput) {
+        $.ajax({
+        type: 'GET',
+        url: '/feeds/posts/summary',
+        data: {
+        'max-results': 25,
+        'alt': 'json',
+        'q': textinput
+        },
+        dataType: 'jsonp',
+        success: function(data) {
+        $('.results-content').removeClass('hidden')
+        $('.results').empty()
+        if (data.feed.entry) {
+        for (var i = 0; i < data.feed.entry.length; i++) {
+        for (var j = 0; j < data.feed.entry[i].link.length; j++) {
+        if (data.feed.entry[i].link[j].rel == 'alternate') {
+        var postUrl = data.feed.entry[i].link[j].href;
+        break;
+        }
+        }
+        var postTitle = data.feed.entry[i].title.$t
+        $('.results').append('<li><a href=' + postUrl + ' title="' + postTitle + '">' + '<svg viewBox="0 0 48 48"><path d="M38 6H10c-2.21 0-4 1.79-4 4v28c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V10c0-2.21-1.79-4-4-4zm-3.98 12H14v-4h20.02v4zm0 8H14v-4h20.02v4zm-6 8H14v-4h14.02v4z"></path></svg>' + postTitle + '</a></li>')
+        }
+        } else {
+        $('.results-content').addClass('hidden')
+        }
+        }
+        })
+        } else {
+        $('.results-content').addClass('hidden')
+        }
+       $('body').click(function() {
+        $('.results-content').addClass('hidden')
+      })
+      })
+
 function addItem(t) {
     let alo = localStorage.getItem('my');
     let target = [];
