@@ -1,5 +1,7 @@
 ### Hi there 👋
-
+Please remember that 
+LICENSED CODE With No Open Source Code. 
+Property Of 3schools.in
 <!--
 **3schools/3schools** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
