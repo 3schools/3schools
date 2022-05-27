@@ -13,6 +13,8 @@ document.querySelector("#search-input").value = text;
     text.indexOf("তোমার নাম কি") >= 0 ||
     text.indexOf("তুমি কে") >= 0||
     text.indexOf("আপনি কে") >= 0||
+    text.indexOf("হাই") >= 0||
+    text.indexOf("ওকে") >= 0||
     text.indexOf("হোয়াট ইজ ইওর নেম") >= 0
   ) {
     speak(" ওহো, আমি নিজের পরিচয় দিতে ভুলে গেছি ? হাই, আমার নাম অপু। ।।তোমার নাম কী? ");
