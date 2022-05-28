@@ -88,7 +88,58 @@ let name = text.substr(text.indexOf("নাম") + 3); // Split name from text
     ) {
     speak(`খুলছি ফেসবুক`);
     window.open(`https://www.facebook.com/`,`_self`);
+  }else if (
+    text.indexOf("ওপেন টেলিগ্রাম ") >=0 ||
+    text.indexOf("টেলিগ্রাম খুলুন") >=0 ||
+    text.indexOf("টেলিগ্রাম ওপেন করো") >=0 ||
+    text.indexOf("টেলিগ্রাম") >=0 
+    ) {
+    speak(`খুলছি টেলিগ্রাম`);
+    window.open(`https://www.telegram.me`,`_self`);
+  } else if (
+    text.indexOf("বিয়ে") >=0 ||
+    text.indexOf("আমি তোমাকে ভালোবাসি") >=0 ||
+    text.indexOf("আই লাভ ইউ") >=0 ||
+    text.indexOf("আমার বিয়ে কবে") >=0 
+    ) {
+    speak(`যতই করুন বাহানা, যতই বলুন না না না, বিয়ের ফুল ফুঁটলেই বাজবে বিয়ের বাজনা`);
+  } else if (
+    text.indexOf("তারিখ") >= 0 ||
+    text.indexOf("আজকে কি বার") >= 0 ||
+    text.indexOf("ডেট") >= 0 ||
+    text.indexOf("হোয়াট ইজ দা টাইম") >= 0
+  ) {
+    speak(currentDate());
+  }else if (
+    text.indexOf("সাত দিনের নাম") >= 0 ||
+    text.indexOf("সপ্তাহ") >= 0 ||
+    text.indexOf("রবিবার") >= 0 ||
+    text.indexOf("সোমবার") >= 0
+  ) {
+    speak(`রবিবার,সোমবার,মঙ্গলবার,বুধবার,বৃহস্পতিবার,শুক্রবার,শনিবার`);
+  }else if (
+    text.indexOf("জোকস") >= 0 ||
+    text.indexOf("আরও একটা") >= 0 ||
+    text.indexOf("মজা") >= 0 
+  ) {
+    speak(jokes());
+  }else if (
+    text.indexOf("গাল") >= 0 ||
+    text.indexOf("কুত্তা") >= 0 ||
+    text.indexOf("পাদ") >= 0 ||
+    text.indexOf("শুয়োর") >= 0
+  ) {
+    speak(`আমার গাল নেই তাই গালাগালি দিতে পারি না।`) ;
+  }else if (
+    text.indexOf("কবিতা") >= 0 ||
+    text.indexOf("গাও") >= 0 ||
+    text.indexOf("সাইরি") >= 0 ||
+    text.indexOf("ছোটোদের") >= 0
+  ) {
+    speak(poem());
   }
+  
+  
   else {
     speak(`আক্স থ্রি স্কুলসে আমি এইগুলো খুজে পেয়েছি`);
     document.querySelector("#search-form").submit();
@@ -103,7 +154,32 @@ function currentTime() {
     date.getHours() >= 12 ? "PM" : "AM"
   }`;
 }
-
+function currentDate(){
+ const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+ //const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+ const days = ["রবিবার","সোমবার","মঙ্গলবার","বুধবার","বৃহস্পতিবার","শুক্রবার","শনিবার"];
+ let d = new Date();
+ return `আজকে ${days[d.getDay()]} , ${d.getDate()} ${monthNames[d.getMonth()]}, ${d.getFullYear()}`;
+}
+function jokes(){
+   const joke = [
+    "কোন রসগোল্লা একেবারে মিষ্টি নয়? পরীক্ষার খাতায় পাওয়া রসগোল্লা।", 
+    "শিক্ষক ছাত্রকে বললেন - জানো, বই কত পবিত্র জিনিস? ছাত্র বললো, জানি বৈকি স্যার , তাই তো সবসময় স্পর্শ,করি না। ", 
+    "রেজাল্ট বেরোনোর পরে খুব রেগে গিয়ে মা ডাবলুকে বললেন, পাশের বাড়ির মেয়েটাকে দ্যাখ, প্রত্যেকবার ক্লাসে ফাস্ট হয়। ডাবলু বললো, ওকে রোজ দেখতে গিয়েই তো আমি ফেল করলাম। ", 
+    ]
+    return `${joke[Math.floor(Math.random()*joke.length)]}`;
+}
+function poem(){
+  const poems = [
+    "আমাদের ছোট নদী- রবীন্দ্রনাথ ঠাকুর , আমাদের ছোটো নদী চলে আঁকে বাঁকে বৈশাখ মাসে তার হাঁটু জল থাকে। পার হয়ে যায় গোরু, পার হয় গাড়ি, দুই ধার উঁচু তার, ঢালু তার পাড়ি।", 
+    " আকাশ ঘিরে মেঘ করেছে ,সূর্যি গেছে পাঠে ।খুকু গেলো জল আনিতে পদ্মা দীঘির ঘাটে।পদ্মা দীঘির কালো জলে হরেক রকম ফুল। হাঁটুর নিচে ঝুলছে খুকুর গোছা ভরা চুল।", 
+    " বনে থাকে বাঘ । গাছে থাকে পাখি । জলে থাকে মাছ । ডালে আছে ফল । পাখি ফল খায় । পাখা মেলে ওড়ে যায়।  ", 
+    "ছয়টি ঋতু, বারো মাসে, বাংলা বর্ষে যায় আর আসে। ছয় ঋতুতেই এই প্রকৃতি, সাজে নানান রূপ আর রসে। ",
+    "হাট্টিমাটিম টিম। তারা মাঠে পাড়ে ডিম, তাদের খাড়া দুটো শিং, তারা হাট্টিমাটিম টিম।",
+    "টুইংকল টুইংকল লিটল স্টার, হাউ আর ওয়ান্ডার হোয়াট ইউ আর। আপ এভাব দ্যা ওয়ার্ল্ড সো হাই। লাইক এ ডায়মন্ড ইন দ্যা স্কাই", 
+    ]
+    return `${poems[Math.floor(Math.random()*poems.length)]}`;
+}
 
 function speak(text) {
   recognition.stop();
