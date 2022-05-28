@@ -120,6 +120,7 @@ let name = text.substr(text.indexOf("নাম") + 3); // Split name from text
   }else if (
     text.indexOf("জোকস") >= 0 ||
     text.indexOf("আরও একটা") >= 0 ||
+    text.indexOf("জোক") >= 0 ||
     text.indexOf("মজা") >= 0 
   ) {
     speak(jokes());
@@ -131,6 +132,15 @@ let name = text.substr(text.indexOf("নাম") + 3); // Split name from text
   ) {
     speak(`আমার গাল নেই তাই গালাগালি দিতে পারি না।`) ;
   }else if (
+    text.indexOf("গান") >= 0 ||
+    text.indexOf("মিউজিক") >= 0 ||
+    text.indexOf("গাও") >= 0 ||
+    text.indexOf("নাচ") >= 0
+  ) {
+    speak(`আমার গলা ঠিক নেই, তাই আজ আমি গান গাইতে পারব না।`) ;
+  }
+  
+  else if (
     text.indexOf("কবিতা") >= 0 ||
     text.indexOf("গাও") >= 0 ||
     text.indexOf("সাইরি") >= 0 ||
