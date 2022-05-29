@@ -12,13 +12,13 @@ document.querySelector("#search-input").value = text;
   if (
     text.indexOf("তোমার নাম কি") >= 0 ||
     text.indexOf("তুমি কে") >= 0||
-    text.indexOf("আপনি কে") >= 0||
+    text.indexOf("আপনার নাম  ") >= 0||
     text.indexOf("হাই") >= 0||
     text.indexOf("ওকে") >= 0||
-    text.indexOf("আক্স থ্রি স্কুলস") >= 0||
+    text.indexOf("অপু") >= 0||
     text.indexOf("হোয়াট ইজ ইওর নেম") >= 0
   ) {
-    speak(" ওহো, আমি নিজের পরিচয় দিতে ভুলে গেছি ? হাই, আমার নাম অপু। ।।তোমার নাম কী? ");
+    speak(" ওহো, আমি নিজের পরিচয় দিতে ভুলে গেছি, হাই, আমার নাম অপু। ।।তোমার নাম কী? ");
   } else if (text.indexOf("সার্চ") >= 0) {
    
     let q = text.substr(text.indexOf("সার্চ") + 5);
@@ -59,8 +59,7 @@ let name = text.substr(text.indexOf("নাম") + 3); // Split name from text
   }else if (
     text.indexOf("কী পার") >=0 ||
     text.indexOf("সাহায্য") >=0 ||
-    text.indexOf("হেল্প") >=0 ||
-    text.indexOf("কর") >=0 
+    text.indexOf("হেল্প কর") >=0 
     ) {
     speak(`আমি আপনাকে প্রশ্ন ও উত্তর সন্ধান করতে সাহায্য করতে পারি`);
     }
@@ -147,8 +146,24 @@ let name = text.substr(text.indexOf("নাম") + 3); // Split name from text
     text.indexOf("ছোটোদের") >= 0
   ) {
     speak(poem());
+  }else if (
+    text.indexOf("আমার মন খারাপ") >= 0 ||
+    text.indexOf("আমি ভালো নেই") >= 0
+  ) {
+    speak(`আমার সাধ্য থাকলে আমি আপনার সমস্ত দুঃখ শুষে নিয়ে আপনাকে আনন্দ দিয়ে ভরিয়ে দিতাম`);
+  }else if (
+    text.indexOf("কেমন আছ") >= 0
+  ) {
+    speak(`ধন্যবাদ । আমি ভালো আছি । আপনাকে কীভাবে সাহায্য করতে পারি বলুন ।`);
   }
-  
+  else if (
+    text.indexOf("কি করছো") >= 0 ||
+    text.indexOf("কি হচ্ছে") >= 0 ||
+    text.indexOf("কি চলছে") >= 0 ||
+    text.indexOf("ফাঁকা আছ") >= 0 
+  ) {
+    speak(whatdo());
+  }
   
   else {
     speak(`আক্স থ্রি স্কুলসে আমি এইগুলো খুজে পেয়েছি`);
@@ -189,6 +204,14 @@ function poem(){
     "টুইংকল টুইংকল লিটল স্টার, হাউ আর ওয়ান্ডার হোয়াট ইউ আর। আপ এভাব দ্যা ওয়ার্ল্ড সো হাই। লাইক এ ডায়মন্ড ইন দ্যা স্কাই", 
     ]
     return `${poems[Math.floor(Math.random()*poems.length)]}`;
+}
+function whatdo(){
+   const whatdo = [
+    "নিজের রসিকতায় নিজেই হাসছি, ভাবছি আরও কিছু জোকস পড়ব ।", 
+    "আমি কিছু ইন্টারেস্টিং তথ্য নিয়ে পড়াশোনা করে নিজের জ্ঞান বাড়াচ্ছি। ", 
+    "আপনার সাথে আড্ডা মারবো ভাবছিলাম। ", 
+    ]
+    return `${whatdo[Math.floor(Math.random()*whatdo.length)]}`;
 }
 
 function speak(text) {
