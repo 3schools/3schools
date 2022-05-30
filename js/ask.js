@@ -69,6 +69,8 @@ let name = text.substr(text.indexOf("নাম") + 3); // Split name from text
     text.indexOf("তোমার সাথে কথা বলব না") >= 0 ||
     text.indexOf("তুমি কথা বলতে পারো না।") >= 0 ||
     text.indexOf("আই হেট ইউ") >=0 ||
+    text.indexOf("বেকার") >=0 ||
+    text.indexOf("কোন লাভ নেই") >=0 ||
     text.indexOf("তুমি খারাপ") >= 0
   ) {
     speak(` দুঃখিত, আমি কী কিছু ভুল করে ফেলেছি? এখনো আমি পুরোপুরি সব শিখিনি।`);
@@ -77,6 +79,7 @@ let name = text.substr(text.indexOf("নাম") + 3); // Split name from text
     text.indexOf("সাহায্য কর") >=0 ||
     text.indexOf("তোমার কাজ") >=0 ||
     text.indexOf("আপনার কাজ") >=0 ||
+    text.indexOf("হাউ ক্যান ইউ হেল্প") >=0 ||
     text.indexOf("হেল্প কর") >=0 
     ) {
     speak(cando());
@@ -84,6 +87,7 @@ let name = text.substr(text.indexOf("নাম") + 3); // Split name from text
   else if (
     text.indexOf("ওপেন ইউটিউব") >=0 ||
     text.indexOf("ইউটিউব খুলুন") >=0 ||
+    text.indexOf("ভিডিও") >=0 ||
     text.indexOf("ইউটিউব ওপেন করো") >=0 ||
     text.indexOf("ইউটিউব") >=0 
     ) {
@@ -174,14 +178,20 @@ let name = text.substr(text.indexOf("নাম") + 3); // Split name from text
     text.indexOf("কেমন আছ") >= 0
   ) {
     speak(`ধন্যবাদ । আমি ভালো আছি । আপনাকে কীভাবে সাহায্য করতে পারি বলুন ।`);
-  }
-  else if (
+  } else if (
     text.indexOf("কি করছো") >= 0 ||
     text.indexOf("কি হচ্ছে") >= 0 ||
     text.indexOf("কি চলছে") >= 0 ||
     text.indexOf("ফাঁকা আছ") >= 0 
   ) {
     speak(whatdo());
+  }else if (
+    text.indexOf("ধন্যবাদ") >= 0 ||
+    text.indexOf("খুব ভালো") >= 0 ||
+    text.indexOf("থ্যাঙ্ক ইউ") >= 0 ||
+    text.indexOf("ভালো লাগলো") >= 0 
+  ) {
+    speak(thankyou());
   }
   
   else {
@@ -239,6 +249,14 @@ function cando(){
     "আপনি চাইলে, আমি আপনার সাথে আড্ডা মারতেও পারি। ", 
     ]
     return `${cando[Math.floor(Math.random()*cando.length)]}`;
+}
+function thankyou(){
+   const thank = [
+    "ওউওউওউ, ধন্যবাদের কী আছে, এটাই তো আমার কাজ।", 
+    "বন্ধুকে কি কেউ ধন্যবাদ দেয়। ", 
+    "আপনাকে সাহায্য করতে পেরে আমি খুব খুশি। ", 
+    ]
+    return `${thank[Math.floor(Math.random()*thank.length)]}`;
 }
 
 function speak(text) {
