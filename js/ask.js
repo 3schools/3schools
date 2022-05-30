@@ -10,16 +10,24 @@ document.querySelector(".cE").innerHTML += text;
 
 document.querySelector("#search-input").value = text;
   if (
-    text.indexOf("তোমার নাম কি") >= 0 ||
+    text.indexOf("তোমার নাম") >= 0 ||
     text.indexOf("তুমি কে") >= 0||
-    text.indexOf("আপনার নাম  ") >= 0||
-    text.indexOf("হাই") >= 0||
-    text.indexOf("ওকে") >= 0||
-    text.indexOf("অপু") >= 0||
+    text.indexOf("আপনার নাম") >= 0||
+    text.indexOf("ওকে গুগল") >= 0||
+    text.indexOf("হু আর ইউ") >= 0||
     text.indexOf("হোয়াট ইজ ইওর নেম") >= 0
   ) {
     speak(" ওহো, আমি নিজের পরিচয় দিতে ভুলে গেছি, হাই, আমার নাম অপু। ।।তোমার নাম কী? ");
-  } else if (text.indexOf("সার্চ") >= 0) {
+  } if (
+    text.indexOf("হাই") >= 0 ||
+    text.indexOf("হ্যালো") >= 0||
+    text.indexOf("হেল্প মি") >= 0||
+    text.indexOf("ওকে অপু") >= 0
+  ) {
+    speak(" নমস্কার ,আজ আপনাকে কিভাবে সাহায্য করতে পারি? ");
+  } 
+  
+  else if (text.indexOf("সার্চ") >= 0) {
    
     let q = text.substr(text.indexOf("সার্চ") + 5);
 speak(` আক্স থ্রি স্কুলসে সার্চ করা হল ${q}`);
@@ -51,17 +59,20 @@ let name = text.substr(text.indexOf("নাম") + 3); // Split name from text
     ){
     speak("ঠিক আছে, আমি চুপ করে যাচ্ছি!");
   } else if (
-    text.indexOf("আমি তোমার সাথে কথা বলব না") >= 0 ||
+    text.indexOf("তোমার সাথে কথা বলব না") >= 0 ||
     text.indexOf("তুমি কথা বলতে পারো না।") >= 0 ||
+    text.indexOf("আই হেট ইউ") >=0 ||
     text.indexOf("তুমি খারাপ") >= 0
   ) {
     speak(` দুঃখিত, আমি কী কিছু ভুল করে ফেলেছি? এখনো আমি পুরোপুরি সব শিখিনি।`);
   }else if (
     text.indexOf("কী পার") >=0 ||
-    text.indexOf("সাহায্য") >=0 ||
+    text.indexOf("সাহায্য কর") >=0 ||
+    text.indexOf("তোমার কাজ") >=0 ||
+    text.indexOf("আপনার কাজ") >=0 ||
     text.indexOf("হেল্প কর") >=0 
     ) {
-    speak(`আমি আপনাকে প্রশ্ন ও উত্তর সন্ধান করতে সাহায্য করতে পারি`);
+    speak(cando());
     }
   else if (
     text.indexOf("ওপেন ইউটিউব") >=0 ||
@@ -103,10 +114,10 @@ let name = text.substr(text.indexOf("নাম") + 3); // Split name from text
     ) {
     speak(`যতই করুন বাহানা, যতই বলুন না না না, বিয়ের ফুল ফুঁটলেই বাজবে বিয়ের বাজনা`);
   } else if (
-    text.indexOf("তারিখ") >= 0 ||
+    text.indexOf("তারিখ কত") >= 0 ||
     text.indexOf("আজকে কি বার") >= 0 ||
     text.indexOf("ডেট") >= 0 ||
-    text.indexOf("হোয়াট ইজ দা টাইম") >= 0
+    text.indexOf("টুডে") >= 0
   ) {
     speak(currentDate());
   }else if (
@@ -140,7 +151,7 @@ let name = text.substr(text.indexOf("নাম") + 3); // Split name from text
   }
   
   else if (
-    text.indexOf("কবিতা") >= 0 ||
+    text.indexOf("শোনাও") >= 0 ||
     text.indexOf("গাও") >= 0 ||
     text.indexOf("সাইরি") >= 0 ||
     text.indexOf("ছোটোদের") >= 0
@@ -152,6 +163,7 @@ let name = text.substr(text.indexOf("নাম") + 3); // Split name from text
   ) {
     speak(`আমার সাধ্য থাকলে আমি আপনার সমস্ত দুঃখ শুষে নিয়ে আপনাকে আনন্দ দিয়ে ভরিয়ে দিতাম`);
   }else if (
+    text.indexOf("হাউ আর ইউ") >=0 ||
     text.indexOf("কেমন আছ") >= 0
   ) {
     speak(`ধন্যবাদ । আমি ভালো আছি । আপনাকে কীভাবে সাহায্য করতে পারি বলুন ।`);
@@ -212,6 +224,14 @@ function whatdo(){
     "আপনার সাথে আড্ডা মারবো ভাবছিলাম। ", 
     ]
     return `${whatdo[Math.floor(Math.random()*whatdo.length)]}`;
+}
+function cando(){
+   const cando = [
+    "আমি আপনাকে প্রশ্ন ও উত্তর সন্ধান করতে সাহায্য করতে পারি।", 
+    "আমি , আমাকে শুধু মাত্র বলে দেখুন, এখন কটা বাজছে, আজকে কি বার , একটা জোক শোনাও ,ইত্যাদি । ", 
+    "আপনি চাইলে, আমি আপনার সাথে আড্ডা মারতেও পারি। ", 
+    ]
+    return `${cando[Math.floor(Math.random()*cando.length)]}`;
 }
 
 function speak(text) {
