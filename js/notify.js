@@ -7,10 +7,10 @@
             .then(function (registration) {
                
                 registration.showNotification('App Notification', {
-          body: 'Welcome back to our app',
-          icon: '/images/icon_256.png',
+          body: 'Thanks for subscribing to our newsletter.',
+          icon: 'https://app.3schools.in/images/icon_256.png',
           vibrate: [200, 100, 200, 100, 200, 100, 200],
-          tag: 'App Notification'
+          tag: '3schools Notification'
         }); 
             
             });
@@ -21,10 +21,10 @@
                 navigator.serviceWorker.ready
                     .then(function (registration) {
                  registration.showNotification('App Notification', {
-          body: 'Welcome back to our app',
-          icon: '/images/icon_256.png',
+          body: 'Welcome back to our blog',
+          icon: 'https://app.3schools.in/images/icon_256.png',
           vibrate: [200, 100, 200, 100, 200, 100, 200],
-          tag: 'App Notification'
+          tag: 'Notification'
         }); 
                     });
             }
