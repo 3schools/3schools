@@ -13,7 +13,7 @@
         .then(function (registration) {
          registration.showNotification('You are back online', {
           body: 'Page is ready to view',
-          icon: '/images/icon_256.png',
+          icon: 'https://app.3schools.in/images/icon_256.png',
           vibrate: [200, 100, 200, 100, 200, 100, 200],
           tag: 'You are back online',
           
@@ -25,7 +25,7 @@
         .then(function (registration) {
           registration.showNotification('No Internet', {
           body: 'we will let you know when this page is ready',
-          icon: '/images/icon_256.png',
+          icon: 'https://app.3schools.in/images/icon_256.png',
           vibrate: [200, 100, 200, 100, 200, 100, 200],
           tag: 'No Internet'
         }); 
