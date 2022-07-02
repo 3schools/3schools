@@ -36,4 +36,9 @@ function currentTime() {
     date.getHours() >= 12 ? "PM" : "AM"
   }`;
 }
- 
+ function speak(text) {
+  recognition.stop();
+  let msg = new SpeechSynthesisUtterance(text);
+  window.speechSynthesis.speak(msg);
+  return;
+}
