@@ -3,7 +3,7 @@ Ask 3schools Main Js
 *Copyright www.3schools.in
 *Licensed code (no open source code)
 *V8
-*Last updated 5 June 2022
+*Last updated 5 July 2022
 
 */
 
