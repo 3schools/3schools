@@ -11,7 +11,7 @@ document.querySelector("#search-input").value = text;
 if (
     text.indexOf("What is your name") >= 0 ||
     text.indexOf("What's your name") >= 0||
-    text.indexOf("Who are you") >= 0||
+    text.indexOf("Who are you") >= 0
   ) {
     speak(" Hello, I am your 3schools's assistant.");
   } else if (
