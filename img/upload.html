@@ -120,6 +120,7 @@
   </div>
   Login : {{loggedIn}}
   <button ng-disabled="checkingLogin || loggedIn" ng-click="login()">Log In</button>
+  <button ng-show="loggedIn" onclick="window.open('https://security.google.com/settings/security/permissions')">Log out</button>
   <p ng-hide="checkingLogin || loggedIn">
     Login to upload images/videos from your computer.
   </p>
