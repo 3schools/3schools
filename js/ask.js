@@ -47,7 +47,34 @@ document.querySelector("#search-input").value = text;
     let q = text.substr(text.indexOf("সার্চ") + 5);
 speak(` আক্স থ্রি স্কুলসে সার্চ করা হল ${q}`);
     window.open(`https://ask.3schools.in/search?q=${q}`,`_self`);
-  } else if (
+  }
+  else if (
+    text.indexOf("নাইট মোড") >=0 ||
+    text.indexOf("লাইট মোড") >=0 ||
+    text.indexOf("ডার্ক মোড") >=0 ||
+    text.indexOf("ডার্কমোড") >=0 ||
+    text.indexOf("ডার্ক নাইট") >=0 ||
+    text.indexOf("ব্লাক মোড") >=0 ||
+    text.indexOf("চোখ খারাপ") >=0 
+    ) {
+    speak(`ঠিক আছে, করে দিচ্ছি। `);
+    window.open(`https://ask.3schools.in/p/result.html`,`_self`);
+  } 
+  else if (
+    text.indexOf("ফ্লাসলাইট") >=0 ||
+    text.indexOf("লাইট অন") >=0 ||
+    text.indexOf("লাইট অফ") >=0 ||
+    text.indexOf("ফ্ল্যাস লাইট") >=0 ||
+    text.indexOf("ফ্ল্যাস অফ") >=0 ||
+    text.indexOf("টচ") >=0 ||
+    text.indexOf("টর্চ") >=0 ||
+    text.indexOf("লাইট জ্বা") >=0 ||
+    text.indexOf("ফ্ল্যাস অন") >=0 
+    ) {
+    speak(`করে দিচ্ছি।`);
+    window.open(`https://ask.3schools.in/p/flash.html`,`_self`);
+  }
+  else if (
     text.indexOf("টাইম") >= 0 ||
     text.indexOf("কয়টা বাজে") >= 0 ||
     text.indexOf("কয়টা বাজ") >=0 ||
