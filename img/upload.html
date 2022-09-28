@@ -164,13 +164,17 @@
 </div>
 <script>
     if(window.location.hostname!="app.3schools.in"){window.location.href="https://www.3schools.in";}
+ 
   let crSize = 9 / 16;
   function initCropper() {
     var image = document.getElementById('crop-img');
     var cropper = new Cropper(image, {
       aspectRatio: crSize
     });
-    
+    document.getElementById('crop-button').addEventListener('click', function() {
+      var imgurl = cropper.getCroppedCanvas().toDataURL();
+      angular.element(document.getElementById('crop-button')).scope().uploadL(imgurl);
+    });
     document.getElementById('d-img').addEventListener('click', function() {
       let link = document.createElement('a');
       link.href = cropper.getCroppedCanvas().toDataURL();
@@ -193,11 +197,6 @@
     cropI.querySelector('#crop-img').src = s;
     setTimeout(initCropper, 1000);
   }
-   
-   document.getElementById('crop-button').addEventListener('click', function() {
-      var imgurl = cropper.getCroppedCanvas().toDataURL();
-      angular.element(document.getElementById('crop-button')).scope().uploadL(imgurl);
-    });
 </script>
 <script>
   let user_client_id = "509581293681-q82nlbr0pfdg29enqcs0e47k2mcbjjj8.apps.googleusercontent.com";
