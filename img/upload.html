@@ -162,8 +162,39 @@
     </div>
   </div>
 </div>
-<script>const _0x116436=_0x3d60;(function(_0x7fbca8,_0x40ab14){const _0xcc6e9f=_0x3d60,_0x3e77d7=_0x7fbca8();while(!![]){try{const _0x34ba42=parseInt(_0xcc6e9f(0x159))/0x1*(parseInt(_0xcc6e9f(0x142))/0x2)+parseInt(_0xcc6e9f(0x15e))/0x3+parseInt(_0xcc6e9f(0x15f))/0x4*(-parseInt(_0xcc6e9f(0x147))/0x5)+-parseInt(_0xcc6e9f(0x15d))/0x6*(-parseInt(_0xcc6e9f(0x141))/0x7)+-parseInt(_0xcc6e9f(0x143))/0x8+-parseInt(_0xcc6e9f(0x13d))/0x9*(parseInt(_0xcc6e9f(0x13e))/0xa)+-parseInt(_0xcc6e9f(0x15c))/0xb*(-parseInt(_0xcc6e9f(0x14e))/0xc);if(_0x34ba42===_0x40ab14)break;else _0x3e77d7['push'](_0x3e77d7['shift']());}catch(_0x370541){_0x3e77d7['push'](_0x3e77d7['shift']());}}}(_0x2466,0xa5e2b));window['location'][_0x116436(0x162)]!=_0x116436(0x160)&&(window[_0x116436(0x145)][_0x116436(0x149)]=_0x116436(0x150));let crSize=0x9/0x10;function _0x2466(){const _0x2eb835=['block','toDataURL','appendChild','4120nCFKGT','crop-img','display','143KuGZKI','22734XZKufZ','2516169IzoLuG','38580yEFPDU','app.3schools.in','querySelector','hostname','9XIpVJt','8638260GCHgdj','getCroppedCanvas','addEventListener','1351czRDlV','52RjenWG','10356712BkFbho','#rCropper','location','.img-ratio','25ktoahW','getElementById','href','body','#crop-img','3schools.png','style','1115988sShiTt','download','https://www.3schools.in','createElement','click','#crop-img-b','none','d-img'];_0x2466=function(){return _0x2eb835;};return _0x2466();}function _0x3d60(_0x4f7f4a,_0x58af67){const _0x2466f4=_0x2466();return _0x3d60=function(_0x3d6002,_0x12c718){_0x3d6002=_0x3d6002-0x13d;let _0x420e5b=_0x2466f4[_0x3d6002];return _0x420e5b;},_0x3d60(_0x4f7f4a,_0x58af67);}function initCropper(){const _0x350c3d=_0x116436;var _0x3082f4=document[_0x350c3d(0x148)](_0x350c3d(0x15a)),_0x400b14=new Cropper(_0x3082f4,{'aspectRatio':crSize});document[_0x350c3d(0x148)](_0x350c3d(0x155))[_0x350c3d(0x140)](_0x350c3d(0x152),function(){const _0x2e7614=_0x350c3d;let _0x44f736=document[_0x2e7614(0x151)]('a');_0x44f736[_0x2e7614(0x149)]=_0x400b14[_0x2e7614(0x13f)]()[_0x2e7614(0x157)](),_0x44f736[_0x2e7614(0x14f)]=_0x2e7614(0x14c),document[_0x2e7614(0x14a)][_0x2e7614(0x158)](_0x44f736),_0x44f736[_0x2e7614(0x152)](),_0x44f736['delete'],document[_0x2e7614(0x14a)]['removeChild'](_0x44f736);}),document['querySelector'](_0x350c3d(0x144))[_0x350c3d(0x140)]('click',function(){const _0x2a569f=_0x350c3d;_0x400b14['destroy'](),document[_0x2a569f(0x161)]('#crop-img-b')[_0x2a569f(0x14d)][_0x2a569f(0x15b)]=_0x2a569f(0x154),document[_0x2a569f(0x161)](_0x2a569f(0x146))[_0x2a569f(0x14d)]['display']='block';});}function fetchImg(_0x5468d1){const _0x1dabde=_0x116436;document[_0x1dabde(0x161)](_0x1dabde(0x146))[_0x1dabde(0x14d)][_0x1dabde(0x15b)]=_0x1dabde(0x154);let _0xcc0249=document['querySelector'](_0x1dabde(0x153));_0xcc0249[_0x1dabde(0x14d)]['display']=_0x1dabde(0x156),_0xcc0249['querySelector'](_0x1dabde(0x14b))['src']=_0x5468d1,setTimeout(initCropper,0x3e8);}
- document.getElementById('crop-button').addEventListener('click', function() {
+<script>
+    if(window.location.hostname!="app.3schools.in"){window.location.href="https://www.3schools.in";}
+  let crSize = 9 / 16;
+  function initCropper() {
+    var image = document.getElementById('crop-img');
+    var cropper = new Cropper(image, {
+      aspectRatio: crSize
+    });
+    
+    document.getElementById('d-img').addEventListener('click', function() {
+      let link = document.createElement('a');
+      link.href = cropper.getCroppedCanvas().toDataURL();
+      link.download = '3schools.png';
+      document.body.appendChild(link);
+      link.click();
+      link.delete;
+      document.body.removeChild(link);
+    });
+    document.querySelector('#rCropper').addEventListener('click', function() {
+      cropper.destroy();
+      document.querySelector('#crop-img-b').style.display = "none";
+      document.querySelector('.img-ratio').style.display = "block";
+    });
+  }
+  function fetchImg(s) {
+    document.querySelector('.img-ratio').style.display = "none";
+    let cropI = document.querySelector('#crop-img-b');
+    cropI.style.display = 'block';
+    cropI.querySelector('#crop-img').src = s;
+    setTimeout(initCropper, 1000);
+  }
+   
+   document.getElementById('crop-button').addEventListener('click', function() {
       var imgurl = cropper.getCroppedCanvas().toDataURL();
       angular.element(document.getElementById('crop-button')).scope().uploadL(imgurl);
     });
