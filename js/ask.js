@@ -103,7 +103,7 @@ else if (/ট্রান্সলেট|অনুবাদ কর|এর ইং
     speak(thankyou());
   }
   else {
-    speak(`আক্স থ্রি স্কুলস এ সার্চ করা হল ${text}`);
+    speak(`নীচের তথ্য গুলো দেখুন`);
     document.querySelector("#search-form").submit();
   }
 };
