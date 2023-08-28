@@ -141,7 +141,8 @@ function thankyou(){
 }
 
 function speak(text) {
-  recognition.stop();
+  //recognition.stop();
+  window.speechSynthesis.cancel();
   let msg = new SpeechSynthesisUtterance(text);
   msg.lang = 'bn-BD';
   msg.pitch = 1; 
