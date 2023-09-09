@@ -19,20 +19,7 @@ qS("#search-input").value = text;
   if (/তোমার নাম|তুমি কে|আপনার নাম|ok google|who are you|হোয়াট ইজ ইওর নেম/i.test(text))
    {
     speak(whoYou());
-  }else if (/good morning|গুড মর্নিং|শুভ সকাল/i.test(text))
-  {
-    speak("সুন্দর সকালের অনেক শুভেচ্ছা আপনাকে");
-  } 
- else if (/good evening|শুভ সন্ধ্যা|গুড ইভিনিং/i.test(text))
-  {
-    speak(" শুভ সন্ধ্যা , আমি আপনার জন্য কী করতে পারি? ");
-  }
- else if (/good night|গুড নাইট|শুভ রাত্রি/i.test(text)) {
-    speak("শুভ রাত্রি। চাঁদ মামাকে বলছি আপনার কপালে স্বপ্নের টিপ দিয়ে যেতে।");
-  }
-  else if (/আলাইকুম/i.test(text)) {
-    speak("ওয়াআলাইকুমুস সালাম। আজ আপনাকে কিভাবে সাহায্য করতে পারি?");
-  }
+   }
 else if (/ট্রান্সলেট|অনুবাদ কর|এর ইংরাজি|এর ইংরেজি|ইংরেজি কি|ইংলিশ কি|ইংরেজি অনুবাদ/i.test(text))  {
     let trans;
     if (text.includes("ট্রান্সলেট")) {
@@ -77,22 +64,7 @@ else if (/ট্রান্সলেট|অনুবাদ কর|এর ইং
   {
     speak(`খুলছি ইউটিউব`);
     window.open(`https://youtube.com/`);
-  } 
-  else if (/whatsapp|হোয়াটসঅ্যাপ/i.test(text)) 
-  {
-    speak(`খুলছি হোয়াটসঅ্যাপ`);
-    window.open(`https://api.whatsapp.com/`);
   }
-  else if (/ফেসবুক|facebook/i.test(text))
-  {
-    speak(`খুলছি ফেসবুক`);
-    window.open(`https://www.facebook.com/`);
-  }
-  else if (/telegram|টেলিগ্রাম/i.test(text))
-  {
-    speak(`খুলছি টেলিগ্রাম`);
-    window.open(`https://www.telegram.me`);
-  } 
   else if (/তারিখ কত|আজ কত তারিখ|আজকে কত তারিখ|ইংলিশের কত তারিখ|ক্যালেন্ডার|আজকের তারিখ|এখন কত সাল|আজকে কি বার|ডেট|date|টুডে/i.test(text))
   {
     speak(currentDate());
@@ -141,7 +113,6 @@ function thankyou(){
 }
 
 function speak(text) {
-  //recognition.stop();
   window.speechSynthesis.cancel();
   let msg = new SpeechSynthesisUtterance(text);
   msg.lang = 'bn-BD';
