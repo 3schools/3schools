@@ -37,5 +37,18 @@
     
     <div id="root"></div>
     
+    <script type="application/javascript" src="https://sdki.truepush.com/sdk/v2.0.4/app.js" async></script>
+    <script>
+    var truepush = window.truepush || [];
+            
+    truepush.push(function(){
+        truepush.Init({
+            id: "650a974582e6cb9dd6a17bec",
+            serviceWorkerFileName: "swc.js"
+        },function(error){
+          if(error) console.error(error);
+        })
+    })
+    </script>
   </body>
 </html>
