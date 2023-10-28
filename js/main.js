@@ -53,7 +53,7 @@ function thankyou(){
 }
 
 function speak(text) {
-  recognition.stop();
+  window.speechSynthesis.cancel();
   let msg = new SpeechSynthesisUtterance(text);
   msg.lang = 'en-IN';
   msg.pitch = 1; 
