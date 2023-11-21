@@ -33,12 +33,6 @@ else if (/ট্রান্সলেট|অনুবাদ কর|এর ইং
     localStorage.setItem('vTranslate', trans);
     window.open(`https://ask.3schools.in/p/bangla-to-english.html`, `_self`);
 }
-  
-  else if (/প্রশ্ন আছে|প্রশ্ন কর|প্রশ্ন জিজ্ঞা/i.test(text))
-  {
-    speak(`বুঝেছি, আপনি একটি প্রশ্ন করতে চাইছেন। আপনি এই পেজ থেকে নিজের প্রশ্নটি জিজ্ঞাসা করতে পারবেন।`);
-    window.open(`https://ask.3schools.in/p/ask.html`,`_self`);
-  }
   else if (/নাইট মোড|লাইট মোড|ডার্ক মোড|ডার্কমোড|ডার্ক নাইট|ব্লাক মোড|চোখ খারাপ/i.test(text))
   {
     speak(`ঠিক আছে, করে দিচ্ছি। `);
@@ -54,11 +48,6 @@ else if (/ট্রান্সলেট|অনুবাদ কর|এর ইং
     let t = currentTime();
     speak(t);
   }
-  else if (/কী পার|সাহায্য কর|কি কি পার|কি কি করতে|কি করতে পার|তোমার কাজ|আপনার কাজ|হাউ ক্যান ইউ হেল্প|হেল্প কর/i.test(text))
-   {
-    speak(`হু; আমি এইসব কাজগুলো করতে পারি। আপনি শুধু কমান্ড দিয়ে দেখুন`);
-    window.open(`https://ask.3schools.in/p/voice-command.html`,`_self`);
-    }
   else if (/youtube|ভিডিও|video|music|ইউটিউব/i.test(text))
   {
     speak(`খুলছি ইউটিউব`);
