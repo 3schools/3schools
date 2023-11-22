@@ -19,18 +19,9 @@ qS("#search-input").value = text;
    {
     speak(whoYou());
    }
-else if (/ট্রান্সলেট|অনুবাদ কর|এর ইংরাজি|এর ইংরেজি|ইংরেজি কি|ইংলিশ কি|ইংরেজি অনুবাদ/i.test(text))  {
-    let trans;
-    if (text.includes("ট্রান্সলেট")) {
-        trans = text.substr(text.indexOf("ট্রান্সলেট") + 10);
-    } else if (text.includes("অনুবাদ কর")) {
-        trans = text.substr(text.indexOf("অনুবাদ কর") + 10);
-    } else {
-        trans = text.slice(0, text.indexOf("এর ইংরাজি")) || text.slice(0, text.indexOf("ইংরেজি অনুবাদ")) || text.slice(0, text.indexOf("এর ইংরেজি"))
-            || text.slice(0, text.indexOf("ইংরেজি কি")) || text.slice(0, text.indexOf("ইংলিশ কি"));
-    }
-    speak(`আমি অনুবাদ করছি ${trans}`);
-    localStorage.setItem('vTranslate', trans);
+else if (/ট্রান্সলেট|অনুবাদ কর|এর ইংরাজি|এর ইংরেজি|ইংরেজি কি|ইংলিশ কি|ইংরেজি অনুবাদ/i.test(text)){
+    speak(`ঠিক আছে। ${text}`);
+    localStorage.setItem('vTranslate',text);
     window.open(`https://ask.3schools.in/p/bangla-to-english.html`, `_self`);
 }
   else if (/নাইট মোড|লাইট মোড|ডার্ক মোড|ডার্কমোড|ডার্ক নাইট|ব্লাক মোড|চোখ খারাপ/i.test(text))
