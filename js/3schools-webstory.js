@@ -4,8 +4,6 @@ function sLink(l, callback) {
   rSl.onload = callback;
   document.body.appendChild(rSl);
 }
-document.querySelector('#next-button').addEventListener('click', showStory);
-
 sLink("https://app.3schools.in/js/3schools-webstory-module.js", function() {
     let startI = 1;
 
