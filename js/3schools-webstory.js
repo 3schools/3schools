@@ -14,6 +14,7 @@ sLink("https://app.3schools.in/js/3schools-webstory-module.js", function() {
       startI += 6;
      }
   }
+  document.querySelector('#next-button').addEventListener('click', showStory);
   showStory();
 
   if(qS('.trending-posts.related')){
