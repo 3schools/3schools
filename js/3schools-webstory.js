@@ -6,7 +6,7 @@ function sLink(l, callback) {
   //document.body.removeChild(rSl);
 }
 
-sLink("module.js", function() {
+sLink("3schools-webstory-module.js", function() {
   let startI = 1;
   document.getElementById('nextPageButton').addEventListener('click', function() {
    if (qS('.webstories-3schools')) {
