@@ -2,6 +2,7 @@
 function qS(e) {
   return document.querySelector(e);
 }
+qS('#next-button').addEventListener('click', showStory);
 function fDate(i) {
   const os = { year: 'numeric', month: 'short', day: '2-digit' };
   return new Date(i).toLocaleDateString('en-US', os);
