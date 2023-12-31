@@ -3,14 +3,14 @@ function sLink(l, callback) {
   rSl.src = l;
   rSl.onload = callback;
   document.body.appendChild(rSl);
-  //document.body.removeChild(rSl);
+  document.body.removeChild(rSl);
 }
 
 sLink("https://app.3schools.in/js/3schools-webstory-module.js", function() {
   let startI = 1;
   function showStory(){
     if (qS('.webstories-3schools')){
-      sLink(`${rP.hP}/feeds/pages/default?alt=json&start-index=${startI}&max-results=6&callback=webStory`);
+      sLink(`${hP}feeds/pages/default?alt=json&start-index=${startI}&max-results=6&callback=webStory`);
       startI += 6;
      }
   }
