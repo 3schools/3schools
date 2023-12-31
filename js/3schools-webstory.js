@@ -5,8 +5,7 @@ function sLink(l, callback) {
   document.body.appendChild(rSl);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  sLink("https://app.3schools.in/js/3schools-webstory-module.js", function() {
+sLink("https://app.3schools.in/js/3schools-webstory-module.js", function() {
     let startI = 1;
 
     function showStory() {
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    document.querySelector('#next-button').addEventListener('click', showStory);
     showStory();
 
     if (qS('.trending-posts.related')) {
@@ -29,4 +27,3 @@ document.addEventListener('DOMContentLoaded', function () {
       window.wsPo = (k) => { reP(k, qS('.trending-posts.webstories')) };
     }
   });
-});
