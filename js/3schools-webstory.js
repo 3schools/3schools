@@ -8,16 +8,13 @@ function sLink(l, callback) {
 
 sLink("https://app.3schools.in/js/3schools-webstory-module.js", function() {
   let startI = 1;
-  document.getElementById('nextPageButton').addEventListener('click', function() {
-   if (qS('.webstories-3schools')) {
-      sLink(`${hP}feeds/pages/default?alt=json&start-index=${startI}&max-results=6&callback=webStory`);
+  function showStory(){
+    if (qS('.webstories-3schools')){
+      sLink(`${rP.hP}/feeds/pages/default?alt=json&start-index=${startI}&max-results=6&callback=webStory`);
       startI += 6;
-    }
-  })
-  if (qS('.webstories-3schools')){
-      sLink(`${hP}feeds/pages/default?alt=json&start-index=${startI}&max-results=6&callback=webStory`);
-      startI += 6;
-   }
+     }
+  }
+  showStory();
 
   if(qS('.trending-posts.related')){
     sLink(`${hP}feeds/posts/default/-/${lA[Math.floor(Math.random() * lA.length)]}?alt=json&max-results=${rP.nP}&callback=rePo`);
