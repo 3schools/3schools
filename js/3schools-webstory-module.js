@@ -8,8 +8,7 @@ function fDate(i) {
   return new Date(i).toLocaleDateString('en-US', os);
 }
 function webStory(k) {
-  qS('.webstories-3schools').innerHTML = '';
-  k.feed.entry.forEach((e) => {
+   k.feed.entry.forEach((e) => {
     let webS = `
     <a href="${e.link[e.link.length - 1].href}">
     <div class="story-img">
