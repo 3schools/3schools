@@ -35,7 +35,7 @@ const reP = (p, c) => {
     let con = `
     <a class="flex3s swiper-slide" href="${e.link[e.link.length-1].href}">
     <div class="post-thumbnail">
-    ${e.media$thumbnail ? `<img data-src="${e.media$thumbnail.url.replace(/s\B\d{2,4}-c/, 's1200')}" alt="${e.title.$t}" class="lazyload" src='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='>`: ''}
+    ${e.media$thumbnail ? `<img data-src="${e.media$thumbnail.url.replace(/s\B\d{2,4}-c/, 's1200')}" alt="${e.title.$t}" class="lazyload" src='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='>`:  `<img alt="${e.title.$t}" src="${getImg3(e)}">`}
     </div>
     <span class="post-title">${e.title.$t}</span>
     </a>
