@@ -7,12 +7,22 @@ function fDate(i) {
   const os = { year: 'numeric', month: 'short', day: '2-digit' };
   return new Date(i).toLocaleDateString('en-US', os);
 }
+function getImg3(i) {
+  const nC = i.content.$t.match(/<noscript>([\s\S]*?)<\/noscript>/);
+  if (nC) {
+    const srcMatch = nC[1].match(/src="([^"]+)"/);
+    const fSrc = srcMatch ? srcMatch[1] : null;
+    return fSrc || 'https://app.3schools.in/img/no.png';
+  }
+  return 'https://app.3schools.in/img/no.png';
+}
 function webStory(k) {
-   k.feed.entry.forEach((e) => {
+  qS('.webstories-3schools').innerHTML = '';
+  k.feed.entry.forEach((e) => {
     let webS = `
     <a href="${e.link[e.link.length - 1].href}">
     <div class="story-img">
-    ${e.media$thumbnail ? `<img data-src="${e.media$thumbnail.url.replace(/s\B\d{2,4}-c/, 's1200')}" alt="${e.title.$t}" class="lazyload" src='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='>`: `<img alt="${e.title.$t}" src="https://app.3schools.in/img/no.png">`}
+    ${e.media$thumbnail ? `<img src="${e.media$thumbnail.url.replace(/s\B\d{2,4}-c/, 's1200')}" alt="${e.title.$t}" class="lazyload" src='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='>`: `<img alt="${e.title.$t}" src="${getImg3(e)}">`}
     </div>
     <span>${e.title.$t}<br><small>${fDate(e.updated.$t)}</small></span>
     </a>
