@@ -75,6 +75,6 @@ function currentDate(){
 let wsp = window.speechSynthesis;
 let v = false;
 let speak = (t) => {
-  v ? s.cancel() : s.speak(new SpeechSynthesisUtterance(t).lang = 'bn-BD');
+  v ? wsp.cancel() : wsp.speak(new SpeechSynthesisUtterance(t).lang = 'bn-BD');
   v = !v;
 };
