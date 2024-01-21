@@ -22,17 +22,17 @@ qS("#search-input").value = text;
 else if (/ট্রান্সলেট|অনুবাদ কর|এর ইংরাজি|এর ইংরেজি|ইংরেজি কি|ইংলিশ কি|ইংরেজি অনুবাদ/i.test(text)){
     speak(`ঠিক আছে। ${text}`);
     localStorage.setItem('vTranslate',text);
-    window.open(`https://ask.3schools.in/p/bangla-to-english.html`, `_self`);
+    location.href="/p/bangla-to-english.html"
 }
   else if (/নাইট মোড|লাইট মোড|ডার্ক মোড|ডার্কমোড|ডার্ক নাইট|ব্লাক মোড|চোখ খারাপ/i.test(text))
   {
     speak(`ঠিক আছে, করে দিচ্ছি। `);
-    window.open(`https://ask.3schools.in/p/result.html`,`_self`);
+    location.href="/p/result.html"
   } 
   else if (/ফ্লাসলাইট|লাইট অন|লাইট অফ|ফ্ল্যাস লাইট|ফ্ল্যাস অফ|টচ|টর্চ|লাইট জ্বা|ফ্ল্যাস অন/i.test(text))
   {
     speak(`করে দিচ্ছি।`);
-    window.open(`https://ask.3schools.in/p/flash.html`,`_self`);
+    location.href="/p/flash.html"
   }
   else if (/টাইম|কয়টা বাজ|কটা বাজ|সময় কত|হোয়াট ইজ দা টাইম/i.test(text))
   {
@@ -79,4 +79,5 @@ let speak = (text) => {
   ku.lang = 'bn-BD';
   kv ? ks.cancel() : ks.speak(ku);
   kv = !kv;
+  ku.onend = () => (kv = false);
 };
