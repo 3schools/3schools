@@ -72,9 +72,11 @@ function currentDate(){
  let d = new Date();
  return `আজকে ${days[d.getDay()]} , ${d.getDate()} ${monthNames[d.getMonth()]}, ${d.getFullYear()}`;
 }
-let wsp = window.speechSynthesis;
-let v = false;
-let speak = (t) => {
-  v ? wsp.cancel() : wsp.speak(new SpeechSynthesisUtterance(t).lang = 'bn-BD');
-  v = !v;
+let ks = window.speechSynthesis;
+let kv = false;
+let speak = (text) => {
+  let ku = new SpeechSynthesisUtterance(text);
+  ku.lang = 'bn-BD';
+  kv ? ks.cancel() : ks.speak(ku);
+  kv = !kv;
 };
