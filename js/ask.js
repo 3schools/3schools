@@ -50,7 +50,7 @@ else if (/ট্রান্সলেট|অনুবাদ কর|এর ইং
   }
   else if (/ধন্যবাদ|খুব ভালো|থ্যাংক ইউ|বুদ্ধিমান|থ্যাঙ্ক ইউ|ভালো লাগলো|thank you/i.test(text))
   {
-    speak(thankyou());
+    speak(`আপনাকে সাহায্য করতে পেরে আমি খুব খুশি।`);
   }
   else {
     speak(`নীচের তথ্য গুলো দেখুন`);
@@ -72,21 +72,5 @@ function currentDate(){
  let d = new Date();
  return `আজকে ${days[d.getDay()]} , ${d.getDate()} ${monthNames[d.getMonth()]}, ${d.getFullYear()}`;
 }
-function thankyou(){
-   const thank = [
-    "ওউওউওউ, ধন্যবাদের কী আছে, এটাই তো আমার কাজ।", 
-    "বন্ধুকে কি কেউ ধন্যবাদ দেয়। ", 
-    "আপনাকে সাহায্য করতে পেরে আমি খুব খুশি। ", 
-    ]
-    return `${thank[Math.floor(Math.random()*thank.length)]}`;
-}
 
-function speak(text) {
-  window.speechSynthesis.cancel();
-  let msg = new SpeechSynthesisUtterance(text);
-  msg.lang = 'bn-BD';
-  msg.pitch = 1; 
-  msg.volume = 1; 
-  window.speechSynthesis.speak(msg);
-  return;
-}
+let p=!1;function speak(e){p?o():n(e)}function n(e){o(),s(e),p=!0}function o(){window.speechSynthesis.cancel(),p=!1}function s(e){let t=new SpeechSynthesisUtterance(e);t.lang='bn-BD',t.pitch=1,t.volume=1,window.speechSynthesis.speak(t)}
