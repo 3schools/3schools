@@ -73,4 +73,4 @@ function currentDate(){
  return `আজকে ${days[d.getDay()]} , ${d.getDate()} ${monthNames[d.getMonth()]}, ${d.getFullYear()}`;
 }
 
-let p=!1;function speak(e){p?o():n(e)}function n(e){o(),s(e),p=!0}function o(){window.speechSynthesis.cancel(),p=!1}function s(e){let t=new SpeechSynthesisUtterance(e);t.lang='bn-BD',t.pitch=1,t.volume=1,window.speechSynthesis.speak(t)}
+let p=!1;function speak(e){p?o():n(e)}function n(e){o(),sp(e),p=!0}function o(){window.speechSynthesis.cancel(),p=!1}function sp(e){let t=new SpeechSynthesisUtterance(e);t.lang='bn-BD',t.pitch=1,t.volume=1,window.speechSynthesis.speak(t)}
