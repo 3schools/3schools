@@ -17,14 +17,16 @@ function getImg3(i) {
   return 'https://app.3schools.in/img/no.png';
 }
 function webStory(k) {
-  qS('.webstories-3schools').innerHTML = '';
+  wsSetting.load ? qS('.webstories-3schools').innerHTML = '':'';
   k.feed.entry.forEach((e) => {
     let webS = `
     <a href="${e.link[e.link.length - 1].href}">
+    <img src="https://app.3schools.in/stories.png" alt="3schools story" class="story-ico">
+    ${e.author[0].gd$image.src && wsSetting.author ? `<img src="${e.author[0].gd$image.src}" alt="${e.author[0].name.$t}" class="story-ico author">` : ''}
     <div class="story-img">
     ${e.media$thumbnail ? `<img src="${e.media$thumbnail.url.replace(/s\B\d{2,4}-c/, 's1200')}" alt="${e.title.$t}" class="lazyload" src='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='>`: `<img alt="${e.title.$t}" src="${getImg3(e)}">`}
     </div>
-    <span>${e.title.$t}<br><small>${fDate(e.updated.$t)}</small></span>
+    <span>${e.title.$t}${wsSetting.date ? `<br><small>${fDate(e.updated.$t)}</small>`: ''}</span>
     </a>
     `;
     qS('.webstories-3schools').insertAdjacentHTML('beforeend', webS);
@@ -34,6 +36,7 @@ const reP = (p, c) => {
   p.feed.entry.forEach((e)=> {
     let con = `
     <a class="flex3s swiper-slide" href="${e.link[e.link.length-1].href}">
+   ${c.classList.contains('webstories') ? `<img src="https://app.3schools.in/stories.png" alt="3schools story" class="story-ic">`:''}
     <div class="post-thumbnail">
     ${e.media$thumbnail ? `<img data-src="${e.media$thumbnail.url.replace(/s\B\d{2,4}-c/, 's1200')}" alt="${e.title.$t}" class="lazyload" src='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='>`:  `<img alt="${e.title.$t}" src="${getImg3(e)}">`}
     </div>
