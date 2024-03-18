@@ -1,4 +1,4 @@
-/*
+ /*
 Ask 3schools Main Js
 *Copyright www.3schools.in
 *Licensed code (no open source code)
