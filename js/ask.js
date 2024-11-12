@@ -19,12 +19,7 @@ qS("#search-input").value = text;
    {
     speak(`আমি আপনার Ask 3schools অ্যাসিস্ট্যান্ট। আপনাকে কীভাবে সাহায্য করতে পারি।`);
    }
-else if (/ট্রান্সলেট|অনুবাদ কর|এর ইংরাজি|এর ইংরেজি|ইংরেজি কি|ইংলিশ কি|ইংরেজি অনুবাদ/i.test(text)){
-    speak(`ঠিক আছে। ${text}`);
-    localStorage.setItem('vTranslate',text);
-    location.href="/p/bangla-to-english.html"
-}
-  else if (/নাইট মোড|লাইট মোড|ডার্ক মোড|ডার্কমোড|ডার্ক নাইট|ব্লাক মোড|চোখ খারাপ/i.test(text))
+else if (/নাইট মোড|লাইট মোড|ডার্ক মোড|ডার্কমোড/i.test(text))
   {
     speak(`ঠিক আছে, করে দিচ্ছি। `);
     location.href="/p/result.html"
