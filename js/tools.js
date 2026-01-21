@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-     window.sec = 15;
+     window.sec = 5;
 
     const css = `
         .nav-menu.is-open{display:flex!important;flex-direction:column;position:fixed;top:76px;left:0;right:0;background:#030712;padding:20px;border-bottom:1px solid rgba(255,255,255,.1);z-index:1000}
